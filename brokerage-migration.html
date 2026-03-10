@@ -550,12 +550,6 @@
 </div>
 
 <script>
-  const DEPTH_TABS = {
-    SCAN:     ["triage","readiness","action"],
-    STANDARD: ["triage","know","unknown","readiness","risks","requirements","action"],
-    DEEP:     ["triage","know","unknown","readiness","risks","requirements","confounders","effort","measurement","action"],
-  };
-
   const ALL_TABS = [
     { id:"triage",       label:"Triage" },
     { id:"know",         label:"What We Know" },
@@ -569,18 +563,16 @@
     { id:"action",       label:"Next Steps" },
   ];
 
-  let currentDepth = "STANDARD";
-  let currentTab   = "triage";
+  let currentTab = "triage";
 
   function renderNav() {
     const nav = document.getElementById("tabnav");
     nav.innerHTML = "";
-    DEPTH_TABS[currentDepth].forEach(id => {
-      const def = ALL_TABS.find(t => t.id === id);
+    ALL_TABS.forEach(tab => {
       const btn = document.createElement("button");
-      btn.className = "tab" + (id === currentTab ? " on" : "");
-      btn.textContent = def.label;
-      btn.onclick = () => switchTab(id);
+      btn.className = "tab" + (tab.id === currentTab ? " on" : "");
+      btn.textContent = tab.label;
+      btn.onclick = () => switchTab(tab.id);
       nav.appendChild(btn);
     });
   }
@@ -593,24 +585,9 @@
     renderNav();
   }
 
-  function switchDepth(d) {
-    currentDepth = d;
-    document.querySelectorAll(".depth-btn").forEach(b => {
-      b.classList.toggle("on", b.dataset.depth === d);
-    });
-    if (!DEPTH_TABS[d].includes(currentTab)) {
-      currentTab = DEPTH_TABS[d][0];
-    }
-    renderNav();
-    switchTab(currentTab);
-  }
-
-  document.querySelectorAll(".depth-btn").forEach(b => {
-    b.onclick = () => switchDepth(b.dataset.depth);
-  });
-
   // Init
-  switchDepth("STANDARD");
+  renderNav();
+  switchTab("triage");
 </script>
 </body>
 </html>
