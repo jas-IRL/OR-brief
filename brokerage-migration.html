@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>OR Intelligence Brief — Brokerage Migration to FE Orem</title>
+<title>OR Discovery Dashboard — Brokerage Migration to FE Orem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -107,7 +107,7 @@
     <div id="wordmark">
       <div id="logo">OR</div>
       <div id="title-block">
-        <div class="title">OR Intelligence Brief</div>
+        <div class="title">OR Discovery Dashboard</div>
         <div class="sub">Brokerage Migration · FE Orem</div>
       </div>
     </div>
@@ -188,18 +188,25 @@
       <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px">Owners</div>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Special Ops</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:500">Mikaël Martínez</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px">Special Ops Lead</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Brokerage Ops</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:500">Tyler Esmon</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px">Brokerage Ops Lead</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Process SME</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:500">David Erikson</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px">Process SME</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">OR</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:500">Jas Bond</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px">Operational Readiness</div>
         </div>
       </div>
+    </div>
+    <div style="margin-top:20px;font-size:10px;color:rgba(255,255,255,.3);line-height:1.7">
+      <strong style="color:rgba(255,255,255,.45)">How to use this dashboard:</strong> Use the depth buttons above (SCAN / STANDARD / DEEP) to control how much detail you see. SCAN shows 3 tabs — the summary, readiness snapshot, and recommended action. STANDARD adds the data, open questions, risks, and requirements. DEEP adds mechanism statements, confounders, effort sizing, and the measurement plan. Start with SCAN if you have 60 seconds. Use STANDARD for the discovery call.
     </div>
   </div>
 
@@ -228,6 +235,7 @@
     </div>
 
     <div class="section-label">Quality</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:14px">The internal QA team evaluates both internal and FE (BPO) brokerage advocates. These numbers are for FE advocates only, confirmed by cross-referencing advocate IDs against the employee database.</div>
     <div class="card" style="border-left:3px solid #00D632;margin-bottom:32px">
       <div class="grid-4">
         <div>
@@ -265,7 +273,7 @@
   <!-- WHAT WE DON'T KNOW -->
   <div class="pane" id="pane-unknown">
     <h2>What We <span style="color:#FFD700">Don't Know</span></h2>
-    <p class="sub-note">These gaps require owner action before migration can proceed. Each has a named accountable.</p>
+    <p class="sub-note">These are the questions we need answered before we can finalize the readiness recommendation. Each question has a named owner — the person who can answer it. This list is the agenda for the discovery call.</p>
     <div class="flex-col">
       <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:10px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">01</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Is CNX already fully closed? When did the last advocate roll off?</span></div><div class="flex-right"><span class="owner-tag">VMO</span></div></div></div>
       <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:10px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">02</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Which Tier 2 scenarios shift to FE and which stay internal?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops</span></div></div></div>
@@ -411,7 +419,7 @@
   <!-- CONFOUNDER SCAN -->
   <div class="pane" id="pane-confounders">
     <h2>Confounder <span style="color:#FF6B35">Scan</span></h2>
-    <p class="sub-note">Variables that could distort measurement of migration impact.</p>
+    <p class="sub-note">When we measure whether this migration is working, other things happening at the same time could move the same metrics and make it hard to tell what caused the change. These are the variables we need to account for. If a metric shifts after launch, check these before attributing it to the migration.</p>
     <div class="flex-col">
       <div class="row" style="border-left-color:#FF6B35"><div style="font-size:11px;color:#FF6B35;margin-bottom:5px;font-weight:500">Tax Season (Feb–Apr)</div><div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.65">Volume spikes may mask or amplify performance shifts during the migration window.</div></div>
       <div class="row" style="border-left-color:#FF6B35"><div style="font-size:11px;color:#FF6B35;margin-bottom:5px;font-weight:500">FE Tenure Ramp</div><div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.65">120-day advocates improving naturally — this will confound migration impact measurement.</div></div>
@@ -424,7 +432,7 @@
   <!-- EFFORT SIZING -->
   <div class="pane" id="pane-effort">
     <h2>Effort <span style="color:#00B8FF">Sizing</span></h2>
-    <p class="sub-note" style="margin-bottom:28px">Estimated effort per function.</p>
+    <p class="sub-note" style="margin-bottom:28px">These are preliminary estimates based on what we know today. They are not committed work — they are meant to help each function understand the likely scope so they can plan capacity. Final sizing depends on the Tier 2 scope definition from discovery.</p>
     <div class="grid-auto">
       <div class="card" style="border-left:3px solid #00D632"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">QM</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Sustain QA cadence, calibrate on Tier 2 rubric.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">~68 evals / month</div></div>
       <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">L&amp;D</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Tier 2 module — 1–2 modules + assessment.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">4–8 hrs content · 17 advocates</div></div>
@@ -440,7 +448,7 @@
   <!-- MEASUREMENT PLAN -->
   <div class="pane" id="pane-measurement">
     <h2>Measurement <span class="accent">Plan</span></h2>
-    <p class="sub-note" style="margin-bottom:28px">Baselines, watch thresholds, and success targets.</p>
+    <p class="sub-note" style="margin-bottom:28px">How we will know if the migration is working. Baselines are where we are today. T+7 (7 days after launch) shows the thresholds that trigger intervention — if a metric crosses these lines, something is wrong and we act. T+30 (30 days after launch) shows what success looks like once the change has settled.</p>
     <div class="grid-3">
       <div class="card" style="border-left:3px solid #00B8FF;padding:22px">
         <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#00B8FF;margin-bottom:4px">Baselines</div>
@@ -528,7 +536,7 @@
 
 <!-- FOOTER -->
 <div id="footer">
-  <span>OR INTELLIGENCE BRIEF · BROKERAGE MIGRATION · FE OREM</span>
+  <span>OR DISCOVERY DASHBOARD · BROKERAGE MIGRATION · FE OREM</span>
   <span>JAS BOND · CX ANALYST · 3/10/2026</span>
 </div>
 
