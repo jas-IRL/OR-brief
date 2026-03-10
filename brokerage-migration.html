@@ -282,21 +282,81 @@
   <!-- REQUIREMENTS -->
   <div class="pane" id="pane-requirements">
     <h2><span class="accent">Requirements</span></h2>
-    <p class="sub-note">All items required before Go. Sorted by criticality.</p>
-    <div class="flex-col">
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Tier 2 scope document approved</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Brokerage Ops / Risk &amp; Compliance</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FINRA supervisory structure validated</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Risk / Compliance</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FE tooling permissions confirmed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Support Product</span><span class="badge badge-gray">Not assessed</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Escalation model documented</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">MET</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FE capacity model validated</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">SOW amended</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-gray">Not assessed</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Knowledge articles audited for Tier 2</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Tier 2 enablement completed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&amp;D</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Change communication delivered</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Comms</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">HOOPs and coverage confirmed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">T+7 / T+30 dashboards operational</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">OR</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">QA cadence confirmed for transition</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">QM</span><span class="badge badge-yellow">Partially met</span></div></div></div>
-      <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">TL coaching capability assessed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-red">Not started</span></div></div></div>
+    <p class="sub-note">What must be true before Tier 2 expansion can proceed. Each item has an owner, a plain-language description, and a data reference where applicable.</p>
+    <div class="flex-col" style="gap:16px">
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Define which Tier 2 work moves to FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Brokerage Ops / Compliance</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">Tyler Esmon and Brett Sellers need to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Every other requirement depends on this answer. Without it, we cannot size training, define escalation paths, or assess compliance risk.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Validate FINRA supervisory structure at FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Risk / Compliance</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">Brokerage work requires FINRA Series 7 and 63 licenses. FE advocates hold these licenses. But expanding into Tier 2 may require additional supervisory controls at the BPO site. Compliance needs to confirm the structure meets regulatory requirements before FE handles higher-risk scenarios.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid rgba(255,255,255,.45);padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm FE has the same tool access as internal</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Support Product</span><span class="badge badge-gray">Not assessed</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">We have not confirmed whether FE advocates have the same permissions in CF1, Copilot, Regulator, and Toolbox as internal advocates. If there are gaps, FE will create workarounds on regulated interactions — which is a compliance risk. Josh Berzok needs to run a permission audit.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Document the escalation model</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">MET / Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE advocates need clear rules on what they can handle independently and what must escalate to internal. Today, FE escalates 1–4 cases/week to Manager Escalations from Brokerage Ops. If Tier 2 expands their scope, this path needs to be redefined. Kim Meehan owns the escalation design.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: CASES_QUEUES_TRANSFERS — Brokerage Ops → Manager Escalations, 1–7/week baseline</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Validate FE can absorb the combined volume</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE is handling ~300–400 connected events/week across 9–11 advocates on the Specialty Brokerage Ops phone queue. Brokerage Ops messaging queue sees 1,000–1,700 cases/week. We need WFO to model whether FE can absorb CNX volume plus any internal Tier 2 shift without degrading service.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: PHONE_ADVOCATE_PERFORMANCE (connected events), CASES_QUEUES_TRANSFERS (case volume)</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid rgba(255,255,255,.45);padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Amend the SOW if Tier 2 scope expands</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-gray">Not assessed</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">If FE takes on Tier 2 work that was previously internal, the contractual scope of work changes. Aaron Blonquist needs to determine whether a SOW amendment is required. This depends on the Tier 2 scope definition.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Audit knowledge articles for Tier 2 coverage</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE completed brokerage onboarding training, but we don't know whether the knowledge articles and work instructions cover the Tier 2 scenarios that may shift. CNX may have relied on tribal knowledge not captured in documentation. Content needs to identify which articles exist, which need updates, and which are missing.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: DOCEBO_COURSE_ALL_ADVOCATE — 3 brokerage-specific courses completed by all 11 FE Specialists</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Design and deliver Tier 2 training for FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&amp;D</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE advocates completed Tier 1 brokerage onboarding. If Tier 2 scenarios shift to FE, L&amp;D needs to design enablement — likely 1–2 modules with practice scenarios and an assessment. All 17 FE advocates must complete before handling Tier 2 work independently.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: DOCEBO_COURSE_ALL_ADVOCATE — FE Specialists have 120 days tenure (started 11/10/2025), per SCAFFOLD_EMPLOYEE_DATE</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Communicate the change to all impacted teams</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content / Comms</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE advocates, FE Team Leads, internal brokerage advocates, and partner leadership need to know what's changing, when, and what's expected. No change communication plan exists today.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm hours of operation and coverage</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">We need to confirm FE Orem's brokerage hours of operation (HOOPs) and whether coverage will change post-migration. Brokerage customers expect consistent availability. Any HOOP gaps create service risk.</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Build T+7 and T+30 monitoring dashboards</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">OR</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">We need dashboards that track resolution rate, FCR, transfer rate, escalation rate, and QA scores post-launch. Baselines exist — resolution rate is at 97%, FCR 7-day at 78%, transfers down to 30/week. The dashboards need to surface deviations from these baselines in the first 7 and 30 days.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: CASES_QUEUES_TRANSFERS (resolution, transfers), DIM_FIRST_CONTACT_RESOLUTION (FCR), QA_SCORES_BY_EVAL (quality)</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm QA continues through the transition</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">QM</span><span class="badge badge-yellow">Partially met</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">QA is active today — the internal QA team has evaluated 12 FE brokerage advocates with 1,053 evals since November 2025, averaging 98–100 with 100% policy pass. We need Vanessa Simpson to confirm this cadence continues through the transition and covers any new Tier 2 work.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: QA_SCORES_BY_EVAL (Brokerage vertical), validated via LDAP cross-reference to SCAFFOLD_EMPLOYEE_DATE</div>
+      </div>
+
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Assess whether the TL can coach on expanded scope</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO / Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE has one Team Lead for the entire 17-person brokerage team. The TL has 120 days of brokerage tenure. If Tier 2 work expands, we need to assess whether the TL has the expertise to coach advocates on more complex, compliance-sensitive scenarios. Consider internal SME support during the transition.</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: SCAFFOLD_EMPLOYEE_DATE — 1 TL, CCO Partner Brokerage - Team Lead, started 11/10/2025</div>
+      </div>
+
     </div>
   </div>
 
