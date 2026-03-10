@@ -105,7 +105,7 @@
 <div id="topbar">
   <div id="header-row">
     <div id="wordmark">
-      <div id="logo">OR</div>
+      <div id="logo">Within 1 week of discovery · OR</div>
       <div id="title-block">
         <div class="title">OR Discovery Dashboard</div>
         <div class="sub">Brokerage Migration · FE Orem</div>
@@ -132,21 +132,19 @@
         Brokerage Volume Migration<br/><span style="color:#00D632">to FE Orem</span>
       </h1>
       <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;max-width:580px">
-        Brokerage volume consolidating into FE Orem as CNX El Salvador closes. FE QA is strong
-        (98–100 avg, 1,053 evals, 100% policy pass). Tier 1 absorption is low-risk.
-        <strong style="color:rgba(255,255,255,.75)"> Tier 2 scope expansion is undefined — that is the primary readiness gap.</strong>
+        Concentrix El Salvador is closing its brokerage support operation. FoundEver (FE) Orem is absorbing that volume and may also take on Tier 2 brokerage scenarios currently handled by internal advocates. Brokerage work requires FINRA Series 7 and 63 licenses — FE holds these licenses. The Tier 1 volume absorption appears to be underway. The Tier 2 scope expansion has not been defined yet, which is the primary gap blocking readiness assessment.
       </p>
     </div>
 
     <!-- READINESS STATUS — the first thing anyone sees -->
     <div style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2);border-radius:8px;padding:24px 28px;margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#FFD700;letter-spacing:-.02em">Conditional Go</div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#FFD700;letter-spacing:-.02em">Conditionally Ready</div>
         <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,215,0,.6);border:1px solid rgba(255,215,0,.25);border-radius:4px;padding:3px 8px">Needs Discovery</div>
       </div>
       <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px">
-        <strong style="color:#00D632">Tier 1 (CNX volume absorption) is a Go.</strong> FE is already handling this work with 98–100 QA scores and improving autonomy metrics. No blockers.<br/><br/>
-        <strong style="color:#FFD700">Tier 2 (scope expansion) is Conditional.</strong> We cannot assess readiness for work that hasn't been defined. Four things must be true before Tier 2 can proceed:
+        <strong style="color:#00D632">Tier 1 (CNX volume absorption): Ready.</strong> FE is already handling this work with 98–100 QA scores and improving autonomy metrics. No blockers.<br/><br/>
+        <strong style="color:#FFD700">Tier 2 (scope expansion): Not Ready.</strong> The expanded scope has not been defined. Four things need to be in place for the business to be considered operationally ready:
       </div>
       <div style="display:flex;flex-direction:column;gap:8px">
         <div style="display:flex;align-items:flex-start;gap:10px">
@@ -166,7 +164,7 @@
           <div><div style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500">Tooling permissions confirmed</div><div style="font-size:10px;color:rgba(255,255,255,.45)">FE has the same access as internal in CF1, Copilot, Regulator, Toolbox. Support Product owns this.</div></div>
         </div>
       </div>
-      <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:16px;font-style:italic">When all four boxes are checked, this moves to Go. Until then, Tier 2 expansion does not proceed.</div>
+      <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:16px;font-style:italic">When all four are in place, the frontline is considered ready for the expanded scope.</div>
     </div>
 
     <div class="grid-3" style="margin-bottom:28px">
@@ -206,7 +204,7 @@
       </div>
     </div>
     <div style="margin-top:20px;font-size:10px;color:rgba(255,255,255,.3);line-height:1.7">
-      <strong style="color:rgba(255,255,255,.45)">How to use this dashboard:</strong> Use the depth buttons above (SCAN / STANDARD / DEEP) to control how much detail you see. SCAN shows 3 tabs — the summary, readiness snapshot, and recommended action. STANDARD adds the data, open questions, risks, and requirements. DEEP adds mechanism statements, confounders, effort sizing, and the measurement plan. Start with SCAN if you have 60 seconds. Use STANDARD for the discovery call.
+      <strong style="color:rgba(255,255,255,.45)">How to use this dashboard:</strong> Use the depth buttons above (SCAN / STANDARD / DEEP) to control how much detail you see. SCAN shows 3 tabs — the summary, readiness snapshot, and recommended action. STANDARD adds the data, open questions, risks, and requirements. DEEP adds confounders, effort sizing, and the measurement plan. Start with SCAN if you have 60 seconds. Use STANDARD for the discovery call.
     </div>
   </div>
 
@@ -312,22 +310,22 @@
   <!-- KEY RISKS -->
   <div class="pane" id="pane-risks">
     <h2>Key <span style="color:#FF4466">Risks</span></h2>
-    <p class="sub-note" style="margin-bottom:28px">L = Likelihood · I = Impact</p>
+    <p class="sub-note" style="margin-bottom:28px">These are the things that could go wrong if we don't address them before or during the migration. Each risk is rated by how likely it is to happen (L) and how much damage it would cause (I). The owner tag shows which function is closest to the risk and would need to act if it materializes.</p>
     <div class="flex-col">
-      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">Tier 2 scope undefined</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-high">HIGH</span></div><span class="owner-tag">Brokerage Ops</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">Single TL, lowest QA score, coaching 17 advocates</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">VMO</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">CNX closure without readiness checkpoint</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-high">HIGH</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">OR</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">Tooling permission gaps on regulated work</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-high">HIGH</span></div><span class="owner-tag">Support Product</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">No escalation model for FE → Internal</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-high">HIGH</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">MET</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">Knowledge articles may not cover CNX workflows</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">Content</span></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;flex:1">FE QA may degrade with Tier 2 complexity</div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">QM</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">Tier 2 scope undefined</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">No one has documented which Tier 2 scenarios shift to FE. Without this, we cannot design training, define escalation paths, or assess compliance risk. Every downstream readiness activity is blocked.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-high">HIGH</span></div><span class="owner-tag">Brokerage Ops</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">Single TL coaching 17 advocates on compliance-sensitive work</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">FE has one Team Lead with 120 days of brokerage tenure. If Tier 2 work expands, this TL needs to coach advocates on more complex, FINRA-regulated scenarios. Coaching quality directly affects compliance outcomes.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">VMO</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">CNX closure without readiness checkpoint</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">Employee data shows zero CNX headcount. If the closure already happened, volume shifted to FE without a formal readiness validation. We may be operating in a post-migration state without knowing it.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-high">HIGH</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">Within 1 week of discovery · OR</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">Tooling permission gaps on regulated work</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">We haven't confirmed whether FE has the same tool access as internal advocates. If permissions are missing, FE will create workarounds on FINRA-regulated interactions — which is a compliance risk.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-high">HIGH</span></div><span class="owner-tag">Support Product</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">No escalation model for FE → Internal</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">FE advocates don't have documented rules on what they can handle independently and what must go to internal. Without this, high-risk or regulatory-sensitive cases may be mishandled or stuck in limbo.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-high">HIGH</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">MET</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">Knowledge articles may not cover CNX workflows</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">CNX may have handled brokerage scenarios that relied on tribal knowledge not captured in documentation. If FE inherits that work without updated articles, advocates won't have the guidance they need.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">Content</span></div></div></div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:6px;font-weight:500">FE QA may degrade with Tier 2 complexity</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:10px">FE scores 98–100 on current Tier 1 work. Tier 2 is harder. If complexity increases without proper enablement, QA scores could drop — and on FINRA-regulated work, that's a compliance signal.</div><div class="row-sb"><div></div><div class="flex-right"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">L</span><span class="risk-medium">MEDIUM</span><span style="font-size:8px;color:rgba(255,255,255,.2);text-transform:uppercase">I</span><span class="risk-medium">MEDIUM</span></div><span class="owner-tag">QM</span></div></div></div>
     </div>
   </div>
 
   <!-- REQUIREMENTS -->
   <div class="pane" id="pane-requirements">
     <h2><span class="accent">Requirements</span></h2>
-    <p class="sub-note">What must be true before Tier 2 expansion can proceed. Each item has an owner, a plain-language description, and a data reference where applicable.</p>
+    <p class="sub-note">What the business needs to be considered operationally ready for this change. Each item has an owner, a plain-language description, and a data reference where applicable.</p>
     <div class="flex-col" style="gap:16px">
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
@@ -385,7 +383,7 @@
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
-        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Build T+7 and T+30 monitoring dashboards</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">OR</span><span class="badge badge-red">Not started</span></div></div>
+        <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Build T+7 and T+30 monitoring dashboards</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Within 1 week of discovery · OR</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">We need dashboards that track resolution rate, FCR, transfer rate, escalation rate, and QA scores post-launch. Baselines exist — resolution rate is at 97%, FCR 7-day at 78%, transfers down to 30/week. The dashboards need to surface deviations from these baselines in the first 7 and 30 days.</div>
         <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "Resolution rate at 97%" — calculated from CASES_QUEUES_TRANSFERS: cases resolved in Brokerage Ops queue vs. transferred out, week of Mar 2. "FCR 7-day at 78%" — joined DIM_FIRST_CONTACT_RESOLUTION to CASES_QUEUES_TRANSFERS on case_id, filtered to Brokerage Ops first-time entries, week of Mar 2. "Transfers down to 30/week" — count of cases with a next queue transfer from Brokerage Ops, same week.</div>
       </div>
@@ -402,17 +400,6 @@
         <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "One Team Lead" and "120 days tenure" — we queried SCAFFOLD_EMPLOYEE_DATE filtered to TEAM_CODE = 'CCO Partner Brokerage - Team Lead' on report date 3/9/2026. Found 1 record, CONTINGENT_WORKER_TYPE = 'BPO', start date 11/10/2025. "17-person team" — sum of 11 Specialists + 6 Advocates from the same table, same date.</div>
       </div>
 
-    </div>
-  </div>
-
-  <!-- MECHANISM STATEMENTS -->
-  <div class="pane" id="pane-mechanism">
-    <h2>Mechanism <span style="color:#A855F7">Statements</span></h2>
-    <p class="sub-note">If-then logic that defines the conditions under which this migration succeeds or fails.</p>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="card" style="border-left:3px solid #00D632"><div style="display:flex;gap:14px;align-items:flex-start"><span style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:rgba(0,214,50,.25);flex-shrink:0;line-height:1">1</span><div><div style="font-size:12px;color:#00D632;margin-bottom:8px;font-weight:500">If FE absorbs CNX volume successfully</div><div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7">→ brokerage capacity maintained, internal team focuses on Tier 2.</div></div></div></div>
-      <div class="card" style="border-left:3px solid #FFD700"><div style="display:flex;gap:14px;align-items:flex-start"><span style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:rgba(255,215,0,.25);flex-shrink:0;line-height:1">2</span><div><div style="font-size:12px;color:#FFD700;margin-bottom:8px;font-weight:500">If FE absorbs Tier 2 from internal</div><div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7">→ escalation volume decreases, FE resolves end-to-end — but only if they have knowledge, tooling, and compliance guardrails.</div></div></div></div>
-      <div class="card" style="border-left:3px solid #00B8FF"><div style="display:flex;gap:14px;align-items:flex-start"><span style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:rgba(0,184,255,.25);flex-shrink:0;line-height:1">3</span><div><div style="font-size:12px;color:#00B8FF;margin-bottom:8px;font-weight:500">If QA coverage continues at current cadence</div><div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7">→ compliance risk remains visible and manageable.</div></div></div></div>
     </div>
   </div>
 
@@ -490,25 +477,11 @@
 
   <!-- RECOMMENDED ACTION -->
   <div class="pane" id="pane-action">
-    <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px">Recommended Action</div>
-    <div class="go-badge">Conditional Go — Needs Discovery</div>
-    <div class="grid-2" style="margin-bottom:32px">
-      <div class="card" style="border-left:3px solid #00D632">
-        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">Tier 1 — CNX Absorption</div>
-        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#00D632;margin-bottom:8px">Go.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.7">FE performing at 98–100 QA with strong autonomy trends. Low-risk absorption.</div>
-      </div>
-      <div class="card" style="border-left:3px solid #FFD700">
-        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">Tier 2 — Scope Expansion</div>
-        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#FFD700;margin-bottom:8px">Conditional.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.7">Needs scope document, compliance review, escalation model, and tooling audit before Go.</div>
-      </div>
-    </div>
-
-    <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Next Steps</div>
+    <h2>Immediate <span class="accent">Next Steps</span></h2>
+    <p class="sub-note">What needs to happen now to move this forward. Each step has a timeline and an owner.</p>
     <div class="flex-col" style="margin-bottom:40px">
       <div class="card" style="border-left:3px solid #00D632;padding:14px 20px">
-        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Schedule discovery call</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">This week</span></div>
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Schedule discovery call</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">By EOW</span></div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Invite Brokerage Ops, Special Ops, VMO, MET, and Compliance stakeholders. Use the "What We Don't Know" tab as the agenda — 9 questions with named owners. Goal: walk out with Tier 2 scope direction and CNX closure confirmation.</div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:14px 20px">
@@ -516,7 +489,7 @@
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Employee scaffold shows zero CNX headcount as of 3/9/2026. Ask VMO: is CNX fully closed? When did the last advocate roll off? If yes, the Tier 1 migration is already live without a formal readiness checkpoint — we need to validate FE is absorbing cleanly.</div>
       </div>
       <div class="card" style="border-left:3px solid #FF4466;padding:14px 20px">
-        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Critical path · Brokerage Ops</span></div>
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Within 2 weeks of discovery · Brokerage Ops</span></div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">This is the single item that unlocks everything else. Ask Brokerage Ops to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Without this, we cannot size training, define escalation paths, assess compliance risk, or finalize the readiness recommendation.</div>
       </div>
       <div class="card" style="border-left:3px solid #00B8FF;padding:14px 20px">
@@ -524,7 +497,7 @@
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">QA is working — 12 FE advocates evaluated, 1,053 evals, 98–100 avg. Ask QM to confirm this cadence will continue through the transition and extend to cover any new Tier 2 work. No new infrastructure needed — just confirmation the existing program stays active.</div>
       </div>
       <div class="card" style="border-left:3px solid #A855F7;padding:14px 20px">
-        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">5</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">After discovery: finalize readiness recommendation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">OR</span></div>
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">5</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">After discovery: finalize readiness recommendation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Within 1 week of discovery · OR</span></div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Once discovery answers are in, update this dashboard with confirmed data, finalize the Readiness Recommendation doc (Google Doc), and present to Melissa and stakeholders for review and approval. The recommendation will include the final go/no-go position, requirements with owners and deadlines, and the T+7/T+30 measurement plan.</div>
       </div>
     </div>
@@ -544,7 +517,7 @@
   const DEPTH_TABS = {
     SCAN:     ["triage","readiness","action"],
     STANDARD: ["triage","know","unknown","readiness","risks","requirements","action"],
-    DEEP:     ["triage","know","unknown","readiness","risks","requirements","mechanism","confounders","effort","measurement","action"],
+    DEEP:     ["triage","know","unknown","readiness","risks","requirements","confounders","effort","measurement","action"],
   };
 
   const ALL_TABS = [
@@ -554,11 +527,10 @@
     { id:"readiness",    label:"Readiness Snapshot" },
     { id:"risks",        label:"Key Risks" },
     { id:"requirements", label:"Requirements" },
-    { id:"mechanism",    label:"Mechanism Statements" },
     { id:"confounders",  label:"Confounder Scan" },
     { id:"effort",       label:"Effort Sizing" },
     { id:"measurement",  label:"Measurement Plan" },
-    { id:"action",       label:"Recommended Action" },
+    { id:"action",       label:"Next Steps" },
   ];
 
   let currentDepth = "STANDARD";
