@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OR Intelligence Briefs</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07090d;
+    --green: #00D632;
+    --card: rgba(255,255,255,.025);
+    --border: rgba(255,255,255,.08);
+    --text: rgba(255,255,255,.85);
+    --muted: rgba(255,255,255,.45);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Mono',monospace; min-height:100vh; display:flex; align-items:center; justify-content:center; }
+  .container { max-width:640px; width:100%; padding:2rem; }
+  .label { font-size:.65rem; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); margin-bottom:.5rem; }
+  h1 { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; letter-spacing:-.03em; margin-bottom:.5rem; }
+  .subtitle { color:var(--muted); font-size:.8rem; margin-bottom:2.5rem; }
+  .brief-list { display:flex; flex-direction:column; gap:.75rem; }
+  a.brief-card {
+    display:flex; justify-content:space-between; align-items:center;
+    background:var(--card); border:1px solid var(--border); border-left:3px solid var(--green);
+    padding:1rem 1.25rem; border-radius:6px; text-decoration:none; color:var(--text);
+    transition: all .15s ease;
+  }
+  a.brief-card:hover { border-color:var(--green); transform:translateY(-1px); }
+  .brief-name { font-size:.85rem; font-weight:500; }
+  .brief-meta { font-size:.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
+  .arrow { color:var(--green); font-size:1.1rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Operational Readiness</div>
+  <h1>Intelligence Briefs</h1>
+  <p class="subtitle">Jas Bond · Cash App CX</p>
+  <div class="brief-list">
+    <a class="brief-card" href="brokerage-migration.html">
+      <div>
+        <div class="brief-name">Brokerage Migration to FE Orem</div>
+        <div class="brief-meta">P1 · Conditional Go · March 2026</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <!-- Add future briefs here:
+    <a class="brief-card" href="next-brief.html">
+      <div>
+        <div class="brief-name">Next Initiative Name</div>
+        <div class="brief-meta">Priority · Status · Date</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    -->
+  </div>
+</div>
+</body>
+</html>
