@@ -303,13 +303,13 @@
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Document the escalation model</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">MET / Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE advocates need clear rules on what they can handle independently and what must escalate to internal. Today, FE escalates 1–4 cases/week to Manager Escalations from Brokerage Ops. If Tier 2 expands their scope, this path needs to be redefined. Kim Meehan owns the escalation design.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: CASES_QUEUES_TRANSFERS — Brokerage Ops → Manager Escalations, 1–7/week baseline</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "1–4 cases/week" — counted from CASES_QUEUES_TRANSFERS where cases moved from Brokerage Ops queue to Brokerage Ops - Manager Escalations queue, Jan–Mar 2026.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Validate FE can absorb the combined volume</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE is handling ~300–400 connected events/week across 9–11 advocates on the Specialty Brokerage Ops phone queue. Brokerage Ops messaging queue sees 1,000–1,700 cases/week. We need WFO to model whether FE can absorb CNX volume plus any internal Tier 2 shift without degrading service.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: PHONE_ADVOCATE_PERFORMANCE (connected events), CASES_QUEUES_TRANSFERS (case volume)</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "300–400 connected events/week" — counted Available_Connected events per week from PHONE_ADVOCATE_PERFORMANCE, filtered to Specialty Brokerage Ops queue, Jan–Mar 2026. "1,000–1,700 cases/week" — counted distinct case_ids entering the Brokerage Ops queue per week from CASES_QUEUES_TRANSFERS, same window.</div>
       </div>
 
       <div class="card" style="border-left:3px solid rgba(255,255,255,.45);padding:16px 20px">
@@ -320,13 +320,13 @@
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Audit knowledge articles for Tier 2 coverage</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE completed brokerage onboarding training, but we don't know whether the knowledge articles and work instructions cover the Tier 2 scenarios that may shift. CNX may have relied on tribal knowledge not captured in documentation. Content needs to identify which articles exist, which need updates, and which are missing.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: DOCEBO_COURSE_ALL_ADVOCATE — 3 brokerage-specific courses completed by all 11 FE Specialists</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "FE completed brokerage onboarding" — we queried DOCEBO_COURSE_ALL_ADVOCATE filtered to TEAM_CODE LIKE '%Partner Brokerage%'. All 11 FE Specialists completed 3 brokerage-specific courses: Cash Investing Overview, Brokerage Direct &amp; Voicemail Case Handling, and Regulator for Brokerage Ops. We do not know what knowledge articles or work instructions exist beyond these courses.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Design and deliver Tier 2 training for FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&amp;D</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE advocates completed Tier 1 brokerage onboarding. If Tier 2 scenarios shift to FE, L&amp;D needs to design enablement — likely 1–2 modules with practice scenarios and an assessment. All 17 FE advocates must complete before handling Tier 2 work independently.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: DOCEBO_COURSE_ALL_ADVOCATE — FE Specialists have 120 days tenure (started 11/10/2025), per SCAFFOLD_EMPLOYEE_DATE</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "17 FE advocates" and "120 days tenure" — we queried SCAFFOLD_EMPLOYEE_DATE filtered to TEAM_CODE LIKE '%Brokerage%' on report date 3/9/2026. Found 11 Specialists + 6 Advocates + 1 TL, all CONTINGENT_WORKER_TYPE = 'BPO'. All 11 Specialists started 11/10/2025. "Completed Tier 1 onboarding" — confirmed via DOCEBO_COURSE_ALL_ADVOCATE, same team codes.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
@@ -342,19 +342,19 @@
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Build T+7 and T+30 monitoring dashboards</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">OR</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">We need dashboards that track resolution rate, FCR, transfer rate, escalation rate, and QA scores post-launch. Baselines exist — resolution rate is at 97%, FCR 7-day at 78%, transfers down to 30/week. The dashboards need to surface deviations from these baselines in the first 7 and 30 days.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: CASES_QUEUES_TRANSFERS (resolution, transfers), DIM_FIRST_CONTACT_RESOLUTION (FCR), QA_SCORES_BY_EVAL (quality)</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "Resolution rate at 97%" — calculated from CASES_QUEUES_TRANSFERS: cases resolved in Brokerage Ops queue vs. transferred out, week of Mar 2. "FCR 7-day at 78%" — joined DIM_FIRST_CONTACT_RESOLUTION to CASES_QUEUES_TRANSFERS on case_id, filtered to Brokerage Ops first-time entries, week of Mar 2. "Transfers down to 30/week" — count of cases with a next queue transfer from Brokerage Ops, same week.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm QA continues through the transition</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">QM</span><span class="badge badge-yellow">Partially met</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">QA is active today — the internal QA team has evaluated 12 FE brokerage advocates with 1,053 evals since November 2025, averaging 98–100 with 100% policy pass. We need Vanessa Simpson to confirm this cadence continues through the transition and covers any new Tier 2 work.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: QA_SCORES_BY_EVAL (Brokerage vertical), validated via LDAP cross-reference to SCAFFOLD_EMPLOYEE_DATE</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "12 FE advocates evaluated" and "1,053 evals, avg 98–100" — we queried QA_SCORES_BY_EVAL filtered to VERTICAL = 'Brokerage', Nov 2025–Mar 2026. Found 12 advocates with -bpo LDAP suffixes tagged as QA_TEAM = 'INTERNAL'. We then cross-referenced each LDAP against SCAFFOLD_EMPLOYEE_DATE and confirmed all 12 are CONTINGENT_WORKER_TYPE = 'BPO' under CCO Partner Brokerage team codes. The QA_TEAM field means who performed the audit, not advocate type.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Assess whether the TL can coach on expanded scope</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO / Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
         <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">FE has one Team Lead for the entire 17-person brokerage team. The TL has 120 days of brokerage tenure. If Tier 2 work expands, we need to assess whether the TL has the expertise to coach advocates on more complex, compliance-sensitive scenarios. Consider internal SME support during the transition.</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">Data: SCAFFOLD_EMPLOYEE_DATE — 1 TL, CCO Partner Brokerage - Team Lead, started 11/10/2025</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "One Team Lead" and "120 days tenure" — we queried SCAFFOLD_EMPLOYEE_DATE filtered to TEAM_CODE = 'CCO Partner Brokerage - Team Lead' on report date 3/9/2026. Found 1 record, CONTINGENT_WORKER_TYPE = 'BPO', start date 11/10/2025. "17-person team" — sum of 11 Specialists + 6 Advocates from the same table, same date.</div>
       </div>
 
     </div>
