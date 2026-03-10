@@ -20,13 +20,13 @@
   #wordmark{display:flex;align-items:center;gap:12px}
   #logo{width:28px;height:28px;background:#00D632;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#07090d;font-weight:800;font-family:'Syne',sans-serif}
   #title-block .title{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:-.02em}
-  #title-block .sub{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:.16em;text-transform:uppercase}
+  #title-block .sub{font-size:9px;color:rgba(255,255,255,.45);letter-spacing:.16em;text-transform:uppercase}
   #depth-btns{display:flex;gap:6px}
   #meta{font-size:9px;color:rgba(255,255,255,.18);letter-spacing:.14em;text-transform:uppercase;text-align:right;line-height:1.7}
 
-  .depth-btn{background:none;border:1px solid rgba(255,255,255,.1);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;padding:7px 18px;border-radius:5px;color:rgba(255,255,255,.3);transition:all .18s}
+  .depth-btn{background:none;border:1px solid rgba(255,255,255,.1);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;padding:7px 18px;border-radius:5px;color:rgba(255,255,255,.45);transition:all .18s}
   .depth-btn.on{background:rgba(0,214,50,.1);border-color:rgba(0,214,50,.4);color:#00D632}
-  .depth-btn:hover:not(.on){border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.6)}
+  .depth-btn:hover:not(.on){border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.6)}
 
   #tabnav{max-width:1080px;margin:0 auto;padding:0 28px;overflow-x:auto;display:flex;border-top:1px solid rgba(255,255,255,.04)}
   .tab{background:none;border:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:13px 18px;transition:color .18s;position:relative;white-space:nowrap;color:rgba(255,255,255,.28)}
@@ -47,7 +47,7 @@
   .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
   .flex-col{display:flex;flex-direction:column;gap:8px}
-  .section-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:12px;margin-top:28px}
+  .section-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px;margin-top:28px}
   .section-label:first-child{margin-top:0}
   h2{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
   h2 .accent{color:#00D632}
@@ -59,7 +59,7 @@
   .badge-red{color:#FF4466;background:rgba(255,68,102,.12);border-color:rgba(255,68,102,.3)}
   .badge-gray{color:rgba(255,255,255,.35);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
 
-  .owner-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:3px 8px;white-space:nowrap}
+  .owner-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:3px 8px;white-space:nowrap}
   .risk-high{color:#FF4466;background:rgba(255,68,102,.1);border:1px solid rgba(255,68,102,.25);font-size:9px;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;padding:3px 8px}
   .risk-medium{color:#FFD700;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.25);font-size:9px;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;padding:3px 8px}
   .risk-low{color:#00D632;background:rgba(0,214,50,.1);border:1px solid rgba(0,214,50,.25);font-size:9px;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;padding:3px 8px}
@@ -96,7 +96,7 @@
   .num{font-size:10px;color:rgba(0,214,50,.5);min-width:20px}
 
   /* evidence footer */
-  .evidence{padding:14px 20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;font-size:10px;color:rgba(255,255,255,.25);line-height:1.7;margin-top:32px}
+  .evidence{padding:14px 20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;font-size:10px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:32px}
 </style>
 </head>
 <body>
@@ -154,19 +154,19 @@
     </div>
 
     <div class="card">
-      <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px">Owners</div>
+      <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px">Owners</div>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)">Special Ops</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Special Ops</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)">Brokerage Ops</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Brokerage Ops</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)">Process SME</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">Process SME</div>
         </div>
         <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px">
-          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)">OR</div>
+          <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">OR</div>
         </div>
       </div>
     </div>
@@ -182,17 +182,17 @@
       <div class="card" style="border-left:3px solid #FF4466">
         <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">CNX El Salvador</div>
         <div style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:6px;font-weight:500">Zero active headcount as of 3/9/2026</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.65">Closure may already be complete</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">Closure may already be complete</div>
       </div>
       <div class="card" style="border-left:3px solid #00B8FF">
         <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">FE Orem (BPO)</div>
         <div style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:6px;font-weight:500">18 advocates total</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.65">6 Advocates @ 607 days · 11 Specialists @ 120 days · 1 TL @ 120 days</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">6 Advocates @ 607 days · 11 Specialists @ 120 days · 1 TL @ 120 days</div>
       </div>
       <div class="card" style="border-left:3px solid #A855F7">
         <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">Internal</div>
         <div style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:6px;font-weight:500">13 advocates total</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.65">7 Advocates @ 322 days · 6 Specialists @ 891 days</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.65">7 Advocates @ 322 days · 6 Specialists @ 891 days</div>
       </div>
     </div>
 
@@ -200,33 +200,31 @@
     <div class="card" style="border-left:3px solid #00D632;margin-bottom:32px">
       <div class="grid-4">
         <div>
-          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px">Advocates Evaluated</div>
+          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Advocates Evaluated</div>
           <div class="big-metric">12</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px">Total Evals (Nov 2025+)</div>
+          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Total Evals (Nov 2025+)</div>
           <div class="big-metric">1,053</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px">Avg QA Score</div>
+          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Avg QA Score</div>
           <div class="big-metric">98–100</div>
         </div>
         <div>
-          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px">Policy &amp; Rubric Pass</div>
+          <div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Policy &amp; Rubric Pass</div>
           <div class="big-metric">100%</div>
         </div>
       </div>
-      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.05);font-size:11px;color:rgba(255,255,255,.4)">
-        TL signal: Victor Amakom at 93.93 — lowest on team.
-      </div>
+
     </div>
 
     <div class="section-label">Performance Trends (Jan → Mar)</div>
     <div class="grid-2">
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Resolution Rate</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.3)">93%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↑ 97%</span></div></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">FCR 7-day</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.3)">72%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↑ 78%</span></div></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Repeat Contacts</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.3)">40%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↓ 21%</span></div></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Transfers Out / wk</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.3)">113</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↓ 30</span></div></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Resolution Rate</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.45)">93%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↑ 97%</span></div></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">FCR 7-day</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.45)">72%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↑ 78%</span></div></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Repeat Contacts</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.45)">40%</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↓ 21%</span></div></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.55)">Transfers Out / wk</span><div style="display:flex;align-items:center;gap:12px"><span style="font-size:11px;color:rgba(255,255,255,.45)">113</span><span style="color:rgba(255,255,255,.2);font-size:10px">→</span><span class="trend-up">↓ 30</span></div></div></div>
     </div>
   </div>
 
@@ -252,17 +250,17 @@
     <h2>Readiness <span class="accent">Snapshot</span></h2>
     <p class="sub-note">Pre-discovery assessment. Gaps are expected at this stage.</p>
     <div class="flex-col">
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Knowledge</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">Tier 1 coverage exists. Tier 2 article audit needed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Training</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">Onboarding complete. Tier 2 enablement not designed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.3)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Tooling</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">Permission parity not confirmed.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#00D632;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Quality</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">1,053 evals, avg 98–100, 100% policy pass.</span></div><span class="badge badge-green">Ready</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Workforce</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">18 FE advocates, 120-day Specialists, single TL, capacity not modeled.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Vendor</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">SOW unknown. CNX closure not confirmed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.3)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Operations</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">LOB has not confirmed requirements.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.3)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Comms</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">No change communication plan.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Operational Readiness</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">Pre-discovery. Tier 2 undefined.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Compliance / Regulatory</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">QA strong on current scope. Compliance review not initiated for Tier 2.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Data / Measurement</span><span style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6">Data exists. Dashboards not built.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Knowledge</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">Tier 1 coverage exists. Tier 2 article audit needed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Training</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">Onboarding complete. Tier 2 enablement not designed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Tooling</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">Permission parity not confirmed.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#00D632;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Quality</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">1,053 evals, avg 98–100, 100% policy pass.</span></div><span class="badge badge-green">Ready</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Workforce</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">18 FE advocates, 120-day Specialists, single TL, capacity not modeled.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Vendor</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">SOW unknown. CNX closure not confirmed.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Operations</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">LOB has not confirmed requirements.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
+      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Comms</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">No change communication plan.</span></div><span class="badge badge-gray">Not Assessed</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Operational Readiness</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">Pre-discovery. Tier 2 undefined.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Compliance / Regulatory</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">QA strong on current scope. Compliance review not initiated for Tier 2.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-center"><div style="width:6px;height:6px;border-radius:50%;background:#FFD700;flex-shrink:0"></div><span style="font-size:11px;color:rgba(255,255,255,.75);font-weight:500;min-width:180px">Data / Measurement</span><span style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6">Data exists. Dashboards not built.</span></div><span class="badge badge-yellow">Gaps Identified</span></div></div>
     </div>
   </div>
 
@@ -288,10 +286,10 @@
     <div class="flex-col">
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Tier 2 scope document approved</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Brokerage Ops / Risk &amp; Compliance</span><span class="badge badge-red">Not started</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FINRA supervisory structure validated</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Risk / Compliance</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.3)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FE tooling permissions confirmed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Support Product</span><span class="badge badge-gray">Not assessed</span></div></div></div>
+      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FE tooling permissions confirmed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Support Product</span><span class="badge badge-gray">Not assessed</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Escalation model documented</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">MET</span><span class="badge badge-red">Not started</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">FE capacity model validated</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div></div>
-      <div class="row" style="border-left-color:rgba(255,255,255,.3)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">SOW amended</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-gray">Not assessed</span></div></div></div>
+      <div class="row" style="border-left-color:rgba(255,255,255,.45)"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">SOW amended</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-gray">Not assessed</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Knowledge articles audited for Tier 2</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content</span><span class="badge badge-red">Not started</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Tier 2 enablement completed</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&amp;D</span><span class="badge badge-red">Not started</span></div></div></div>
       <div class="row" style="border-left-color:#FF4466"><div class="row-sb"><span style="font-size:11px;color:rgba(255,255,255,.7)">Change communication delivered</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Comms</span><span class="badge badge-red">Not started</span></div></div></div>
@@ -331,14 +329,14 @@
     <h2>Effort <span style="color:#00B8FF">Sizing</span></h2>
     <p class="sub-note" style="margin-bottom:28px">Estimated effort per function.</p>
     <div class="grid-auto">
-      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">QM</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Sustain QA cadence, calibrate on Tier 2 rubric.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">~68 evals / month</div></div>
-      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">L&amp;D</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Tier 2 module — 1–2 modules + assessment.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">4–8 hrs content · 17 advocates</div></div>
-      <div class="card" style="border-left:3px solid #00B8FF"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">Content</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Audit brokerage knowledge articles.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">Est. 5–15 articles</div></div>
-      <div class="card" style="border-left:3px solid #A855F7"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">WFO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Capacity model, training windows, HOOPs.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">17 advocates · 4–8 hrs each</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FF6B35;margin-bottom:8px">VMO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">SOW amendment, TL coaching assessment.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 contract review</div></div>
-      <div class="card" style="border-left:3px solid #20E3B2"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#20E3B2;margin-bottom:8px">Support Product</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Tooling audit, queue updates.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1–2 queue changes</div></div>
-      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Risk / Compliance</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Compliance review, FINRA supervisory validation.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 review</div></div>
-      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">MET</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Escalation model documentation.</div><div style="font-size:10px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 document</div></div>
+      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">QM</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Sustain QA cadence, calibrate on Tier 2 rubric.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">~68 evals / month</div></div>
+      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">L&amp;D</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Tier 2 module — 1–2 modules + assessment.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">4–8 hrs content · 17 advocates</div></div>
+      <div class="card" style="border-left:3px solid #00B8FF"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">Content</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Audit brokerage knowledge articles.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">Est. 5–15 articles</div></div>
+      <div class="card" style="border-left:3px solid #A855F7"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">WFO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Capacity model, training windows, HOOPs.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">17 advocates · 4–8 hrs each</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FF6B35;margin-bottom:8px">VMO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">SOW amendment, TL coaching assessment.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 contract review</div></div>
+      <div class="card" style="border-left:3px solid #20E3B2"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#20E3B2;margin-bottom:8px">Support Product</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Tooling audit, queue updates.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1–2 queue changes</div></div>
+      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Risk / Compliance</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Compliance review, FINRA supervisory validation.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 review</div></div>
+      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">MET</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Escalation model documentation.</div><div style="font-size:10px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">1 document</div></div>
     </div>
   </div>
 
@@ -349,42 +347,42 @@
     <div class="grid-3">
       <div class="card" style="border-left:3px solid #00B8FF;padding:22px">
         <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#00B8FF;margin-bottom:4px">Baselines</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:18px">Jan → Mar 2026</div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Resolution Rate</span><span style="font-size:11px;color:#00B8FF;font-weight:500">93% → 97%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">FCR 7-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72% → 78%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">FCR 14-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">68% → 78%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Repeat Contacts</span><span style="font-size:11px;color:#00B8FF;font-weight:500">40% → 21%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Transfers Out / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">113 → 30</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Mgr Escalations / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72 → 30</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">QA Score</span><span style="font-size:11px;color:#00B8FF;font-weight:500">98–100</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Volume / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">1,000–1,700 cases</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);margin-bottom:18px">Jan → Mar 2026</div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#00B8FF;font-weight:500">93% → 97%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72% → 78%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">FCR 14-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">68% → 78%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Repeat Contacts</span><span style="font-size:11px;color:#00B8FF;font-weight:500">40% → 21%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">113 → 30</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Mgr Escalations / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72 → 30</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#00B8FF;font-weight:500">98–100</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Volume / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">1,000–1,700 cases</span></div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:22px">
         <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#FFD700;margin-bottom:4px">T+7 Watch</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:18px">Intervention thresholds</div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Resolution Rate</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 93%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">FCR 7-day</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 70%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Transfers Out / wk</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 70</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Brokerage → Mgr Esc</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 10/wk</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">QA Score</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 95</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);margin-bottom:18px">Intervention thresholds</div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 93%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 70%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 70</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Brokerage → Mgr Esc</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 10/wk</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 95</span></div>
       </div>
       <div class="card" style="border-left:3px solid #00D632;padding:22px">
         <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#00D632;margin-bottom:4px">T+30 Targets</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:18px">Success criteria</div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Resolution Rate</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 95%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">FCR 7-day</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 75%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Repeat Contacts</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 25%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Transfers Out / wk</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 40</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">QA Score</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 97</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">Policy Pass</span><span style="font-size:11px;color:#00D632;font-weight:500">100%</span></div>
-        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.45)">FE Attrition</span><span style="font-size:11px;color:#00D632;font-weight:500">0</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);margin-bottom:18px">Success criteria</div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 95%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 75%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Repeat Contacts</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 25%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 40</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 97</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">Policy Pass</span><span style="font-size:11px;color:#00D632;font-weight:500">100%</span></div>
+        <div class="m-row"><span style="font-size:10px;color:rgba(255,255,255,.65)">FE Attrition</span><span style="font-size:11px;color:#00D632;font-weight:500">0</span></div>
       </div>
     </div>
   </div>
 
   <!-- RECOMMENDED ACTION -->
   <div class="pane" id="pane-action">
-    <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px">Recommended Action</div>
+    <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px">Recommended Action</div>
     <div class="go-badge">Conditional Go — Needs Discovery</div>
     <div class="grid-2" style="margin-bottom:32px">
       <div class="card" style="border-left:3px solid #00D632">
@@ -399,12 +397,12 @@
       </div>
     </div>
 
-    <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px">Next Steps</div>
+    <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Next Steps</div>
     <div class="flex-col" style="margin-bottom:40px">
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Schedule discovery call with Brokerage Ops team</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0">This week</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">2</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm CNX closure status</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0">VMO</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0">Critical path · Brokerage Ops</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">4</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm QA cadence continuation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0">QM</span></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Schedule discovery call with Brokerage Ops team</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">This week</span></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">2</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm CNX closure status</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">VMO</span></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Critical path · Brokerage Ops</span></div></div>
+      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">4</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm QA cadence continuation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">QM</span></div></div>
     </div>
 
     <div class="evidence">Evidence-Assisted Mode. Data from Snowflake APP_CASH_CS, 3/10/2026. QA validated via LDAP cross-reference to SCAFFOLD_EMPLOYEE_DATE.</div>
