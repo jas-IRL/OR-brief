@@ -126,7 +126,7 @@
 
   <!-- TRIAGE -->
   <div class="pane" id="pane-triage">
-    <div style="margin-bottom:40px">
+    <div style="margin-bottom:32px">
       <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#00D632;border:1px solid rgba(0,214,50,.22);border-radius:4px;padding:4px 10px;display:inline-block;margin-bottom:14px">P1 · Active</div>
       <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px">
         Brokerage Volume Migration<br/><span style="color:#00D632">to FE Orem</span>
@@ -136,6 +136,37 @@
         (98–100 avg, 1,053 evals, 100% policy pass). Tier 1 absorption is low-risk.
         <strong style="color:rgba(255,255,255,.75)"> Tier 2 scope expansion is undefined — that is the primary readiness gap.</strong>
       </p>
+    </div>
+
+    <!-- READINESS STATUS — the first thing anyone sees -->
+    <div style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2);border-radius:8px;padding:24px 28px;margin-bottom:28px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#FFD700;letter-spacing:-.02em">Conditional Go</div>
+        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,215,0,.6);border:1px solid rgba(255,215,0,.25);border-radius:4px;padding:3px 8px">Needs Discovery</div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px">
+        <strong style="color:#00D632">Tier 1 (CNX volume absorption) is a Go.</strong> FE is already handling this work with 98–100 QA scores and improving autonomy metrics. No blockers.<br/><br/>
+        <strong style="color:#FFD700">Tier 2 (scope expansion) is Conditional.</strong> We cannot assess readiness for work that hasn't been defined. Four things must be true before Tier 2 can proceed:
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <div style="width:18px;height:18px;border-radius:4px;border:2px solid #FF4466;flex-shrink:0;margin-top:1px"></div>
+          <div><div style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500">Tier 2 scope defined</div><div style="font-size:10px;color:rgba(255,255,255,.45)">Which scenarios shift to FE, which stay internal, which require escalation. Tyler Esmon + Brett Sellers own this.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <div style="width:18px;height:18px;border-radius:4px;border:2px solid #FF4466;flex-shrink:0;margin-top:1px"></div>
+          <div><div style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500">FINRA supervisory structure validated</div><div style="font-size:10px;color:rgba(255,255,255,.45)">Compliance confirms FE's supervisory model supports expanded scope. Brett Sellers owns this.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <div style="width:18px;height:18px;border-radius:4px;border:2px solid #FF4466;flex-shrink:0;margin-top:1px"></div>
+          <div><div style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500">Escalation model documented</div><div style="font-size:10px;color:rgba(255,255,255,.45)">Clear rules on what FE can handle independently and what must go to internal. Kim Meehan owns this.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <div style="width:18px;height:18px;border-radius:4px;border:2px solid #FF4466;flex-shrink:0;margin-top:1px"></div>
+          <div><div style="font-size:11px;color:rgba(255,255,255,.8);font-weight:500">Tooling permissions confirmed</div><div style="font-size:10px;color:rgba(255,255,255,.45)">FE has the same access as internal in CF1, Copilot, Regulator, Toolbox. Josh Berzok owns this.</div></div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:16px;font-style:italic">When all four boxes are checked, this moves to Go. Until then, Tier 2 expansion does not proceed.</div>
     </div>
 
     <div class="grid-3" style="margin-bottom:28px">
@@ -459,10 +490,26 @@
 
     <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Next Steps</div>
     <div class="flex-col" style="margin-bottom:40px">
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Schedule discovery call with Brokerage Ops team</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">This week</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">2</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm CNX closure status</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">VMO</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Critical path · Brokerage Ops</span></div></div>
-      <div class="row" style="border-left-color:#00D632"><div class="row-sb"><div style="display:flex;gap:14px;align-items:center"><span class="num">4</span><span style="font-size:12px;color:rgba(255,255,255,.7)">Confirm QA cadence continuation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">QM</span></div></div>
+      <div class="card" style="border-left:3px solid #00D632;padding:14px 20px">
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Schedule discovery call</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">This week</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Invite Tyler Esmon (Brokerage Ops), Mikaël Martínez (Special Ops), Aaron Blonquist (VMO), Kim Meehan (MET), and Brett Sellers (Compliance). Use the "What We Don't Know" tab as the agenda — 9 questions with named owners. Goal: walk out with Tier 2 scope direction and CNX closure confirmation.</div>
+      </div>
+      <div class="card" style="border-left:3px solid #FFD700;padding:14px 20px">
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">2</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Confirm CNX El Salvador closure status</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Aaron Blonquist · VMO</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Employee scaffold shows zero CNX headcount as of 3/9/2026. Ask Aaron: is CNX fully closed? When did the last advocate roll off? If yes, the Tier 1 migration is already live without a formal readiness checkpoint — we need to validate FE is absorbing cleanly.</div>
+      </div>
+      <div class="card" style="border-left:3px solid #FF4466;padding:14px 20px">
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Request Tier 2 scope document</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Critical path · Tyler Esmon</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">This is the single item that unlocks everything else. Ask Tyler to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Without this, we cannot size training, define escalation paths, assess compliance risk, or finalize the readiness recommendation.</div>
+      </div>
+      <div class="card" style="border-left:3px solid #00B8FF;padding:14px 20px">
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">4</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Confirm QA cadence continues through transition</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Vanessa Simpson · QM</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">QA is working — 12 FE advocates evaluated, 1,053 evals, 98–100 avg. Ask Vanessa to confirm this cadence will continue through the transition and extend to cover any new Tier 2 work. No new infrastructure needed — just confirmation the existing program stays active.</div>
+      </div>
+      <div class="card" style="border-left:3px solid #A855F7;padding:14px 20px">
+        <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">5</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">After discovery: finalize readiness recommendation</span></div><span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Jas Bond · OR</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;padding-left:36px">Once discovery answers are in, update this dashboard with confirmed data, finalize the Readiness Recommendation doc (Google Doc), and present to Melissa and stakeholders for review and approval. The recommendation will include the final go/no-go position, requirements with owners and deadlines, and the T+7/T+30 measurement plan.</div>
+      </div>
     </div>
 
     <div class="evidence">Evidence-Assisted Mode. Data from Snowflake APP_CASH_CS, 3/10/2026. QA validated via LDAP cross-reference to SCAFFOLD_EMPLOYEE_DATE.</div>
