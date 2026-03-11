@@ -1553,7 +1553,7 @@
     const notes = document.getElementById('orbit-notes');
     if (!notes) return;
     // Only show notes on the Summary (triage) tab in Discovery mode
-    if (currentMode === 'discovery' && currentTab === 'triage') {
+    if (currentMode === 'discovery' && currentTab === 'unknown') {
       notes.style.display = 'block';
       const activePane = document.querySelector('.pane.active');
       if (activePane) activePane.appendChild(notes);
