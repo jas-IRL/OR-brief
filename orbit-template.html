@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ORBIT — {{INITIATIVE_NAME}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     background:radial-gradient(ellipse at top, #0a0d14 0%, #07090d 50%, #05070a 100%);
-    color:#d0d3da;
-    font-family:'Inter','Helvetica Neue',Arial,sans-serif;
-    font-size:14px;
+    color:#c8cbd2;
+    font-family:'IBM Plex Mono','Courier New',monospace;
+    font-size:13px;
     line-height:1.7;
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
@@ -34,7 +34,7 @@
 
   /* Mode switcher */
   #mode-switcher{display:flex;gap:8px;align-items:center}
-  .mode-btn{background:none;border:1px solid rgba(255,255,255,.12);font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:8px 16px;border-radius:6px;color:rgba(255,255,255,.5);transition:all .2s;position:relative}
+  .mode-btn{background:none;border:1px solid rgba(255,255,255,.12);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:8px 16px;border-radius:6px;color:rgba(255,255,255,.5);transition:all .2s;position:relative}
   .mode-btn.on{background:rgba(0,214,50,.08);border-color:rgba(0,214,50,.35);color:#00D632;box-shadow:0 0 12px rgba(0,214,50,.15)}
   .mode-btn:hover:not(.on){border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.7)}
   .mode-btn::before{content:'';position:absolute;left:50%;top:50%;width:4px;height:4px;background:currentColor;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .2s}
@@ -49,10 +49,23 @@
   .status-launched{color:#00B8FF}
 
   #tabnav{padding:0 40px;overflow-x:auto;display:flex;border-top:1px solid rgba(255,255,255,.06)}
-  .tab{background:none;border:none;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:13px 18px;transition:all .2s;position:relative;white-space:nowrap;color:rgba(255,255,255,.4)}
+  .tab{background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:13px 18px;transition:all .2s;position:relative;white-space:nowrap;color:rgba(255,255,255,.4)}
   .tab.on{color:#e2e4e9}
   .tab.on::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:#00D632;border-radius:1px;box-shadow:0 0 8px rgba(0,214,50,.4)}
   .tab:hover{color:rgba(255,255,255,.65)}
+
+  /* ── CONTENT VOCABULARY ── */
+  /* Use these classes instead of inline styles for content inside panes */
+  .card-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .card-title{font-size:13px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500}
+  .card-body{color:rgba(255,255,255,.65);line-height:1.7}
+  .card-meta{font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;font-style:italic}
+  .card-compact{padding:14px 20px}
+  .metric-label{font-size:11px;color:rgba(255,255,255,.65)}
+  .metric-value{font-size:12px;font-weight:500}
+  .prose{color:rgba(255,255,255,.72);line-height:1.85;margin-bottom:32px}
+  .prose p{margin-bottom:16px}
+  .prose strong{color:rgba(255,255,255,.9)}
 
   /* ── CONTENT ── */
   #main-container{min-height:100vh;position:relative}
