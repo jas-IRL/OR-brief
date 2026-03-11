@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ORBIT — Brokerage Migration to FE Orem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     background:radial-gradient(ellipse at top, #0a0d14 0%, #07090d 50%, #05070a 100%);
     color:#c8cbd2;
     font-family:'IBM Plex Mono','Courier New',monospace;
-    font-size:15px;
+    font-size:14px;
     line-height:1.7;
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
@@ -30,18 +30,18 @@
   #wordmark{display:flex;align-items:center;gap:12px}
   #logo{width:32px;height:32px;background:#00D632;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#07090d;font-weight:800;font-family:'Syne',sans-serif;animation:glow 3s ease-in-out infinite}
   #title-block .title{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:-.02em}
-  #title-block .sub{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
+  #title-block .sub{font-family:'DM Mono','Courier New',monospace;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
 
   /* Mode switcher */
   #mode-switcher{display:flex;gap:8px;align-items:center}
-  .mode-btn{background:none;border:1px solid rgba(255,255,255,.12);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:8px 16px;border-radius:6px;color:rgba(255,255,255,.5);transition:all .2s;position:relative}
+  .mode-btn{background:none;border:1px solid rgba(255,255,255,.12);font-family:'DM Mono','Courier New',monospace;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:8px 16px;border-radius:6px;color:rgba(255,255,255,.5);transition:all .2s;position:relative}
   .mode-btn.on{background:rgba(0,214,50,.08);border-color:rgba(0,214,50,.35);color:#00D632;box-shadow:0 0 12px rgba(0,214,50,.15)}
   .mode-btn:hover:not(.on){border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.7)}
   .mode-btn::before{content:'';position:absolute;left:50%;top:50%;width:4px;height:4px;background:currentColor;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .2s}
   .mode-btn.on::before{opacity:.6}
 
   /* Metadata bar */
-  #metadata{display:flex;gap:16px;align-items:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  #metadata{display:flex;gap:16px;align-items:center;font-family:'DM Mono','Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
   .meta-item{display:flex;align-items:center;gap:6px}
   .meta-label{color:rgba(255,255,255,.4)}
   .meta-value{color:rgba(255,255,255,.7);font-weight:500}
@@ -49,7 +49,7 @@
   .status-launched{color:#00B8FF}
 
   #tabnav{padding:0 40px;overflow-x:auto;display:flex;border-top:1px solid rgba(255,255,255,.06)}
-  .tab{background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:13px 18px;transition:all .2s;position:relative;white-space:nowrap;color:rgba(255,255,255,.4)}
+  .tab{background:none;border:none;font-family:'DM Mono','Courier New',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:13px 18px;transition:all .2s;position:relative;white-space:nowrap;color:rgba(255,255,255,.4)}
   .tab.on{color:#e2e4e9}
   .tab.on::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:#00D632;border-radius:1px;box-shadow:0 0 8px rgba(0,214,50,.4)}
   .tab:hover{color:rgba(255,255,255,.65)}
@@ -75,7 +75,7 @@
 
   /* Content vocabulary */
   .card-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-  .card-title{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500}
+  .card-title{font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500}
   .card-body{color:rgba(255,255,255,.65);line-height:1.7}
   .card-meta{font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;font-style:italic}
   .card-compact{padding:14px 20px}
@@ -193,7 +193,7 @@
   .sidebar-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px;position:relative;padding-left:12px}
   .sidebar-label::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:4px;height:4px;background:rgba(0,214,50,.3);border-radius:50%}
   .sidebar-value{font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;font-weight:500}
-  .sidebar-context{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;margin-top:8px}
+  .sidebar-context{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7;margin-top:10px}
   
   /* Constellation diagram in sidebar - Saturn ring + speckled stars */
   .constellation-diagram{
@@ -332,9 +332,9 @@
   #footer span{font-size:9px;color:rgba(255,255,255,.15);letter-spacing:.12em}
 
   /* Trend arrows */
-  .trend-up{color:#00D632;font-size:11px}
-  .trend-down{color:#FF4466;font-size:11px}
-  .trend-flat{color:#FFD700;font-size:11px}
+  .trend-up{color:#00D632;font-size:14px}
+  .trend-down{color:#FF4466;font-size:14px}
+  .trend-flat{color:#FFD700;font-size:14px}
 
   /* Row flex helpers */
   .row-sb{display:flex;justify-content:space-between;align-items:center;gap:16px}
@@ -452,7 +452,7 @@
       <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.25;margin-bottom:16px">
         Brokerage Volume Migration<br/><span style="color:#00D632">to FE Orem</span>
       </h1>
-      <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:1.8">
+      <p style="font-size:14px;color:rgba(255,255,255,.78);line-height:1.8">
         Concentrix El Salvador is closing its brokerage support operation. FoundEver (FE) Orem is absorbing that volume and may also take on Tier 2 brokerage scenarios currently handled by internal advocates. Brokerage work requires FINRA Series 7 and 63 licenses — FE holds these licenses. The Tier 1 volume absorption appears to be underway. The Tier 2 scope expansion has not been defined yet, which is the primary gap blocking readiness assessment.
       </p>
       <div style="margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px">
@@ -523,18 +523,18 @@
     <div class="grid-3" style="margin-bottom:20px">
       <div class="card" style="border-left:3px solid #FF4466">
         <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">CNX El Salvador</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500">Zero active headcount as of 3/9/2026</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">Closure may already be complete</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500">Zero active headcount as of 3/9/2026</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">Closure may already be complete</div>
       </div>
       <div class="card" style="border-left:3px solid #00B8FF">
         <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">FE Orem (BPO)</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500">18 advocates total</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">6 Advocates @ 607 days · 11 Specialists @ 120 days · 1 TL @ 120 days</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500">18 advocates total</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">6 Advocates @ 607 days · 11 Specialists @ 120 days · 1 TL @ 120 days</div>
       </div>
       <div class="card" style="border-left:3px solid #A855F7">
         <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">Internal</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500">13 advocates total</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">7 Advocates @ 322 days · 6 Specialists @ 891 days</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500">13 advocates total</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">7 Advocates @ 322 days · 6 Specialists @ 891 days</div>
       </div>
     </div>
     <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.7;margin-bottom:32px">
@@ -545,13 +545,13 @@
     <div class="grid-2" style="margin-bottom:20px">
       <div class="card" style="border-left:3px solid #00B8FF">
         <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">Volume</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500">1,000–1,700 cases/week</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">Brokerage Ops queue (messaging). 300–400 connected events/week on Specialty Brokerage Ops (phone).</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500">1,000–1,700 cases/week</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">Brokerage Ops queue (messaging). 300–400 connected events/week on Specialty Brokerage Ops (phone).</div>
       </div>
       <div class="card" style="border-left:3px solid #A855F7">
         <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">Scope</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500">Tier 1 brokerage scenarios</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE handles Tier 1 work today. Tier 2 scope (complex scenarios, escalations) is undefined.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.88);margin-bottom:6px;font-weight:500">Tier 1 brokerage scenarios</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE handles Tier 1 work today. Tier 2 scope (complex scenarios, escalations) is undefined.</div>
       </div>
     </div>
     <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.7;margin-bottom:32px">
@@ -645,15 +645,15 @@
     <h2><span style="color:#FFD700">Discovery Questions</span></h2>
     <p class="sub-note"></p>
     <div class="flex-col">
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">01</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Is CNX already fully closed? When did the last advocate roll off?</span></div><div class="flex-right"><span class="owner-tag">VMO</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">02</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Which Tier 2 scenarios shift to FE and which stay internal?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">03</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Are there contact types that must stay internal for regulatory reasons?</span></div><div class="flex-right"><span class="owner-tag">Risk / Compliance</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">04</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">What is the escalation model? What can't FE touch?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops / MET</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">05</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">What are the HOOPs for FE brokerage? Will coverage change?</span></div><div class="flex-right"><span class="owner-tag">WFO</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">06</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Does FE have the same tooling permissions as internal?</span></div><div class="flex-right"><span class="owner-tag">Support Product</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">07</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Is a SOW update needed for expanded scope?</span></div><div class="flex-right"><span class="owner-tag">VMO</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">08</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">Does the TL have expertise to coach on Tier 2?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops / VMO</span></div></div></div>
-      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">09</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.6">What volume was CNX handling? Projected FE total?</span></div><div class="flex-right"><span class="owner-tag">WFO / Special Ops</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">01</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Is CNX already fully closed? When did the last advocate roll off?</span></div><div class="flex-right"><span class="owner-tag">VMO</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">02</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Which Tier 2 scenarios shift to FE and which stay internal?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">03</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Are there contact types that must stay internal for regulatory reasons?</span></div><div class="flex-right"><span class="owner-tag">Risk / Compliance</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">04</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">What is the escalation model? What can't FE touch?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops / MET</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">05</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">What are the HOOPs for FE brokerage? Will coverage change?</span></div><div class="flex-right"><span class="owner-tag">WFO</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">06</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Does FE have the same tooling permissions as internal?</span></div><div class="flex-right"><span class="owner-tag">Support Product</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">07</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Is a SOW update needed for expanded scope?</span></div><div class="flex-right"><span class="owner-tag">VMO</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">08</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">Does the TL have expertise to coach on Tier 2?</span></div><div class="flex-right"><span class="owner-tag">Brokerage Ops / VMO</span></div></div></div>
+      <div class="row" style="border-left-color:#FFD700"><div class="row-sb"><div class="row-start"><span style="font-size:12px;color:rgba(255,215,0,.5);min-width:22px;margin-top:1px">09</span><span style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">What volume was CNX handling? Projected FE total?</span></div><div class="flex-right"><span class="owner-tag">WFO / Special Ops</span></div></div></div>
     </div>
   </div>
 
@@ -708,62 +708,62 @@
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Define which Tier 2 work moves to FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Brokerage Ops / Compliance</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">Brokerage Ops and Compliance need to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Every other requirement depends on this answer. Without it, we cannot size training, define escalation paths, or assess compliance risk.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">Brokerage Ops and Compliance need to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Every other requirement depends on this answer. Without it, we cannot size training, define escalation paths, or assess compliance risk.</div>
       </div>
 
       <div class="card" style="border-left:3px solid rgba(255,255,255,.45);padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm FE has the same tool access as internal</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Support Product</span><span class="badge badge-gray">Not assessed</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">We have not confirmed whether FE advocates have the same permissions in CF1, Copilot, Regulator, and Toolbox as internal advocates. If there are gaps, FE will create workarounds on regulated interactions — which is a compliance risk. Support Product needs to run a permission audit.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">We have not confirmed whether FE advocates have the same permissions in CF1, Copilot, Regulator, and Toolbox as internal advocates. If there are gaps, FE will create workarounds on regulated interactions — which is a compliance risk. Support Product needs to run a permission audit.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Document the escalation model</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE advocates need clear rules on what they can handle independently and what must escalate. Today, FE escalates 1–4 cases/week to Manager Escalations from Brokerage Ops. If Tier 2 expands their scope, the escalation path needs to be defined — including whether escalations go to internal Tier 2 advocates, MET, or another path. This is part of the Tier 2 scope definition.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE advocates need clear rules on what they can handle independently and what must escalate. Today, FE escalates 1–4 cases/week to Manager Escalations from Brokerage Ops. If Tier 2 expands their scope, the escalation path needs to be defined — including whether escalations go to internal Tier 2 advocates, MET, or another path. This is part of the Tier 2 scope definition.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "1–4 cases/week" — counted from CASES_QUEUES_TRANSFERS where cases moved from Brokerage Ops queue to Brokerage Ops - Manager Escalations queue, Jan–Mar 2026.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Validate FE can absorb the combined volume</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE is handling ~300–400 connected events/week across 9–11 advocates on the Specialty Brokerage Ops phone queue. Brokerage Ops messaging queue sees 1,000–1,700 cases/week. We need WFO to model whether FE can absorb CNX volume plus any internal Tier 2 shift without degrading service.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE is handling ~300–400 connected events/week across 9–11 advocates on the Specialty Brokerage Ops phone queue. Brokerage Ops messaging queue sees 1,000–1,700 cases/week. We need WFO to model whether FE can absorb CNX volume plus any internal Tier 2 shift without degrading service.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "300–400 connected events/week" — counted Available_Connected events per week from PHONE_ADVOCATE_PERFORMANCE, filtered to Specialty Brokerage Ops queue, Jan–Mar 2026. "1,000–1,700 cases/week" — counted distinct case_ids entering the Brokerage Ops queue per week from CASES_QUEUES_TRANSFERS, same window.</div>
       </div>
 
       <div class="card" style="border-left:3px solid rgba(255,255,255,.45);padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Amend the SOW if Tier 2 scope expands</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO</span><span class="badge badge-gray">Not assessed</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">If FE takes on Tier 2 work that was previously internal, the contractual scope of work changes. VMO needs to determine whether a SOW amendment is required. This depends on the Tier 2 scope definition.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">If FE takes on Tier 2 work that was previously internal, the contractual scope of work changes. VMO needs to determine whether a SOW amendment is required. This depends on the Tier 2 scope definition.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Audit knowledge articles for Tier 2 coverage</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE completed brokerage onboarding training, but we don't know whether the knowledge articles and work instructions cover the Tier 2 scenarios that may shift. CNX may have relied on tribal knowledge not captured in documentation. Content needs to identify which articles exist, which need updates, and which are missing.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE completed brokerage onboarding training, but we don't know whether the knowledge articles and work instructions cover the Tier 2 scenarios that may shift. CNX may have relied on tribal knowledge not captured in documentation. Content needs to identify which articles exist, which need updates, and which are missing.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "FE completed brokerage onboarding" — we queried DOCEBO_COURSE_ALL_ADVOCATE filtered to TEAM_CODE LIKE '%Partner Brokerage%'. All 11 FE Specialists completed 3 brokerage-specific courses: Cash Investing Overview, Brokerage Direct &amp; Voicemail Case Handling, and Regulator for Brokerage Ops. We do not know what knowledge articles or work instructions exist beyond these courses.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Design and deliver Tier 2 training for FE</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&amp;D</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE advocates completed Tier 1 brokerage onboarding. If Tier 2 scenarios shift to FE, L&amp;D needs to design enablement — likely 1–2 modules with practice scenarios and an assessment. All 17 FE advocates must complete before handling Tier 2 work independently.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE advocates completed Tier 1 brokerage onboarding. If Tier 2 scenarios shift to FE, L&amp;D needs to design enablement — likely 1–2 modules with practice scenarios and an assessment. All 17 FE advocates must complete before handling Tier 2 work independently.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "17 FE advocates" and "120 days tenure" — we queried SCAFFOLD_EMPLOYEE_DATE filtered to TEAM_CODE LIKE '%Brokerage%' on report date 3/9/2026. Found 11 Specialists + 6 Advocates + 1 TL, all CONTINGENT_WORKER_TYPE = 'BPO'. All 11 Specialists started 11/10/2025. "Completed Tier 1 onboarding" — confirmed via DOCEBO_COURSE_ALL_ADVOCATE, same team codes.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Communicate the change to all impacted teams</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content / Comms</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE advocates, FE Team Leads, internal brokerage advocates, and partner leadership need to know what's changing, when, and what's expected. No change communication plan exists today.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE advocates, FE Team Leads, internal brokerage advocates, and partner leadership need to know what's changing, when, and what's expected. No change communication plan exists today.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm hours of operation and coverage</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">We need to confirm FE Orem's brokerage hours of operation (HOOPs) and whether coverage will change post-migration. Brokerage customers expect consistent availability. Any HOOP gaps create service risk.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">We need to confirm FE Orem's brokerage hours of operation (HOOPs) and whether coverage will change post-migration. Brokerage customers expect consistent availability. Any HOOP gaps create service risk.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Confirm QA continues through the transition</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">QM</span><span class="badge badge-yellow">Partially met</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">QA is active today — the internal QA team has evaluated 12 FE brokerage advocates with 1,053 evals since November 2025, averaging 98–100 with 100% policy pass. We need QM to confirm this cadence continues through the transition and covers any new Tier 2 work.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">QA is active today — the internal QA team has evaluated 12 FE brokerage advocates with 1,053 evals since November 2025, averaging 98–100 with 100% policy pass. We need QM to confirm this cadence continues through the transition and covers any new Tier 2 work.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "12 FE advocates evaluated" and "1,053 evals, avg 98–100" — we queried QA_SCORES_BY_EVAL filtered to VERTICAL = 'Brokerage', Nov 2025–Mar 2026. Found 12 advocates with -bpo LDAP suffixes tagged as QA_TEAM = 'INTERNAL'. We then cross-referenced each LDAP against SCAFFOLD_EMPLOYEE_DATE and confirmed all 12 are CONTINGENT_WORKER_TYPE = 'BPO' under CCO Partner Brokerage team codes. The QA_TEAM field means who performed the audit, not advocate type.</div>
       </div>
 
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Assess whether the TL can coach on expanded scope</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">VMO / Brokerage Ops</span><span class="badge badge-red">Not started</span></div></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">FE has one Team Lead for the entire 17-person brokerage team. The TL has 120 days of brokerage tenure. If Tier 2 work expands, we need to assess whether the TL has the expertise to coach advocates on more complex, compliance-sensitive scenarios. Consider internal SME support during the transition.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">FE has one Team Lead for the entire 17-person brokerage team. The TL has 120 days of brokerage tenure. If Tier 2 work expands, we need to assess whether the TL has the expertise to coach advocates on more complex, compliance-sensitive scenarios. Consider internal SME support during the transition.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;font-style:italic">↳ "One Team Lead" and "120 days tenure" — we queried SCAFFOLD_EMPLOYEE_DATE filtered to TEAM_CODE = 'CCO Partner Brokerage - Team Lead' on report date 3/9/2026. Found 1 record, CONTINGENT_WORKER_TYPE = 'BPO', start date 11/10/2025. "17-person team" — sum of 11 Specialists + 6 Advocates from the same table, same date.</div>
       </div>
 
@@ -775,11 +775,11 @@
     <h2>Influencing <span style="color:#FF6B35">Variables</span></h2>
     <p class="sub-note">Other things happening at the same time that could move the same metrics. If a number shifts after launch, check these first.</p>
     <div class="flex-col">
-      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Tax Season (Feb–Apr)</div><div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:8px">Every year, brokerage contact volume spikes during tax season as customers deal with 1099s, cost basis questions, and tax-related account changes. This happens regardless of the migration.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If resolution rate drops or handle time increases in March–April, it could be the volume spike — not the migration. We need to compare against the same period last year, not just the pre-launch baseline.</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">FE Advocate Tenure Ramp</div><div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:8px">FE's 11 Specialists started in November 2025. By launch, they'll have 5–7 months of experience. New advocates naturally improve over time — faster resolution, fewer transfers, better QA scores.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If metrics improve after launch, it could be the advocates getting better at their existing work — not the migration going well. We need to separate natural ramp from migration impact.</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Internal Team Restructuring</div><div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:8px">If internal brokerage advocates are redeployed, reassigned, or reduced during the same window, their performance data changes independently of the migration.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> A drop in internal team metrics could look like migration fallout when it's actually a staffing change. We need to track internal headcount and role changes alongside performance.</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">QA Rubric or Scoring Changes</div><div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:8px">If the QA team updates the rubric, changes how questions are weighted, or rotates auditors, QA scores will shift even if advocate behavior stays the same.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> A QA score drop from 98 to 94 could mean advocates are struggling with new work — or it could mean the rubric got harder. We need to confirm no scoring changes happened during the measurement window.</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Cash Investing Product Changes</div><div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:8px">New features, UI changes, or product updates to Cash Investing can shift what customers contact us about. A new feature launch could create a wave of unfamiliar contact types.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If FCR drops after launch, it could be because advocates are seeing new scenarios they haven't been trained on — driven by a product change, not the migration. We need to cross-reference product release dates.</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Tax Season (Feb–Apr)</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:8px">Every year, brokerage contact volume spikes during tax season as customers deal with 1099s, cost basis questions, and tax-related account changes. This happens regardless of the migration.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If resolution rate drops or handle time increases in March–April, it could be the volume spike — not the migration. We need to compare against the same period last year, not just the pre-launch baseline.</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">FE Advocate Tenure Ramp</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:8px">FE's 11 Specialists started in November 2025. By launch, they'll have 5–7 months of experience. New advocates naturally improve over time — faster resolution, fewer transfers, better QA scores.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If metrics improve after launch, it could be the advocates getting better at their existing work — not the migration going well. We need to separate natural ramp from migration impact.</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Internal Team Restructuring</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:8px">If internal brokerage advocates are redeployed, reassigned, or reduced during the same window, their performance data changes independently of the migration.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> A drop in internal team metrics could look like migration fallout when it's actually a staffing change. We need to track internal headcount and role changes alongside performance.</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">QA Rubric or Scoring Changes</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:8px">If the QA team updates the rubric, changes how questions are weighted, or rotates auditors, QA scores will shift even if advocate behavior stays the same.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> A QA score drop from 98 to 94 could mean advocates are struggling with new work — or it could mean the rubric got harder. We need to confirm no scoring changes happened during the measurement window.</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35;padding:16px 20px"><div style="font-size:14px;color:rgba(255,255,255,.75);font-weight:500;margin-bottom:6px">Cash Investing Product Changes</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:8px">New features, UI changes, or product updates to Cash Investing can shift what customers contact us about. A new feature launch could create a wave of unfamiliar contact types.</div><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6"><strong style="color:rgba(255,255,255,.55)">Why it matters:</strong> If FCR drops after launch, it could be because advocates are seeing new scenarios they haven't been trained on — driven by a product change, not the migration. We need to cross-reference product release dates.</div></div>
     </div>
   </div>
 
@@ -788,15 +788,15 @@
     <h2>Effort <span style="color:#00B8FF">Sizing</span></h2>
     <p class="sub-note" style="margin-bottom:28px">These are preliminary estimates based on what we know today. They are not committed work — they are meant to help each function understand the likely scope so they can plan capacity. Final sizing depends on the Tier 2 scope definition from discovery.</p>
     <div class="grid-auto">
-      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">QM</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Sustain QA cadence (~68 evals/month). Calibrate on any new Tier 2 rubric items. Monitor for score degradation as complexity increases.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
-      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">L&amp;D</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Design and deliver Tier 2 enablement — 1–2 modules with practice scenarios and assessment. 17 advocates need to complete before handling Tier 2 independently. Scope depends on Tier 2 definition.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
-      <div class="card" style="border-left:3px solid #00B8FF"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">Content</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Audit brokerage knowledge articles for Tier 2 coverage. Identify which exist, which need updates, and which are missing. Estimate 5–15 articles based on typical brokerage workflow count. Scope depends on Tier 2 definition.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
-      <div class="card" style="border-left:3px solid #A855F7"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">WFO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Model whether FE can absorb combined CNX + internal volume. Schedule training windows for 17 advocates (est. 4–8 hrs each). Confirm HOOPs and coverage model.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
-      <div class="card" style="border-left:3px solid #FF6B35"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF6B35;margin-bottom:8px">VMO</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Review and amend SOW if Tier 2 scope expands. Assess TL coaching capability for expanded scope. Confirm partner readiness.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
-      <div class="card" style="border-left:3px solid #20E3B2"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#20E3B2;margin-bottom:8px">Support Product</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Run permission audit to confirm FE has parity with internal in CF1, Copilot, Regulator, Toolbox. Implement 1–2 queue or routing updates if needed for Tier 2.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
-      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Risk / Compliance</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Confirm whether there are regulatory constraints on which brokerage scenarios a BPO site can handle versus what must stay internal. This is a confirmation, not a remediation — FE already holds FINRA licenses and operates under supervision.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
-      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Brokerage Ops</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Define the Tier 2 scope — which scenarios shift to FE, which stay internal, and what the escalation path looks like. This is the single deliverable that unblocks every other function's work. Also confirm CNX closure status and the operational model going forward.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
-      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">OR</div><div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:10px">Facilitate discovery, update this dashboard with confirmed data, produce the Readiness Recommendation, and run T+7 and T+30 measurement post-launch using existing Snowflake data.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
+      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">QM</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Sustain QA cadence (~68 evals/month). Calibrate on any new Tier 2 rubric items. Monitor for score degradation as complexity increases.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
+      <div class="card" style="border-left:3px solid #FFD700"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FFD700;margin-bottom:8px">L&amp;D</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Design and deliver Tier 2 enablement — 1–2 modules with practice scenarios and assessment. 17 advocates need to complete before handling Tier 2 independently. Scope depends on Tier 2 definition.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
+      <div class="card" style="border-left:3px solid #00B8FF"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00B8FF;margin-bottom:8px">Content</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Audit brokerage knowledge articles for Tier 2 coverage. Identify which exist, which need updates, and which are missing. Estimate 5–15 articles based on typical brokerage workflow count. Scope depends on Tier 2 definition.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
+      <div class="card" style="border-left:3px solid #A855F7"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#A855F7;margin-bottom:8px">WFO</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Model whether FE can absorb combined CNX + internal volume. Schedule training windows for 17 advocates (est. 4–8 hrs each). Confirm HOOPs and coverage model.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
+      <div class="card" style="border-left:3px solid #FF6B35"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF6B35;margin-bottom:8px">VMO</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Review and amend SOW if Tier 2 scope expands. Assess TL coaching capability for expanded scope. Confirm partner readiness.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
+      <div class="card" style="border-left:3px solid #20E3B2"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#20E3B2;margin-bottom:8px">Support Product</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Run permission audit to confirm FE has parity with internal in CF1, Copilot, Regulator, Toolbox. Implement 1–2 queue or routing updates if needed for Tier 2.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
+      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Risk / Compliance</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Confirm whether there are regulatory constraints on which brokerage scenarios a BPO site can handle versus what must stay internal. This is a confirmation, not a remediation — FE already holds FINRA licenses and operates under supervision.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟢 S</div></div>
+      <div class="card" style="border-left:3px solid #FF4466"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#FF4466;margin-bottom:8px">Brokerage Ops</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Define the Tier 2 scope — which scenarios shift to FE, which stay internal, and what the escalation path looks like. This is the single deliverable that unblocks every other function's work. Also confirm CNX closure status and the operational model going forward.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
+      <div class="card" style="border-left:3px solid #00D632"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#00D632;margin-bottom:8px">OR</div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:10px">Facilitate discovery, update this dashboard with confirmed data, produce the Readiness Recommendation, and run T+7 and T+30 measurement post-launch using existing Snowflake data.</div><div style="font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.04);border-radius:5px;padding:5px 10px">🟡 M</div></div>
     </div>
   </div>
 
@@ -808,34 +808,34 @@
       <div class="card" style="border-left:3px solid #00B8FF;padding:22px">
         <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#00B8FF;margin-bottom:4px">Baselines</div>
         <div style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:18px">Jan → Mar 2026</div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#00B8FF;font-weight:500">93% → 97%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72% → 78%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">FCR 14-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">68% → 78%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Repeat Contacts</span><span style="font-size:11px;color:#00B8FF;font-weight:500">40% → 21%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">113 → 30</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Mgr Escalations / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72 → 30</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#00B8FF;font-weight:500">98–100</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Volume / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">1,000–1,700 cases</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Resolution Rate</span><span style="font-size:11px;color:#00B8FF;font-weight:500">93% → 97%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">FCR 7-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72% → 78%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">FCR 14-day</span><span style="font-size:11px;color:#00B8FF;font-weight:500">68% → 78%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Repeat Contacts</span><span style="font-size:11px;color:#00B8FF;font-weight:500">40% → 21%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Transfers Out / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">113 → 30</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Mgr Escalations / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">72 → 30</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">QA Score</span><span style="font-size:11px;color:#00B8FF;font-weight:500">98–100</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Volume / wk</span><span style="font-size:11px;color:#00B8FF;font-weight:500">1,000–1,700 cases</span></div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:22px">
         <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#FFD700;margin-bottom:4px">T+7 Watch</div>
         <div style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:18px">Intervention thresholds</div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 93%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 70%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 70</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Brokerage → Mgr Esc</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 10/wk</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 95</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Resolution Rate</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 93%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">FCR 7-day</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 70%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Transfers Out / wk</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 70</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Brokerage → Mgr Esc</span><span style="font-size:11px;color:#FFD700;font-weight:500">&gt; 10/wk</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">QA Score</span><span style="font-size:11px;color:#FFD700;font-weight:500">&lt; 95</span></div>
       </div>
       <div class="card" style="border-left:3px solid #00D632;padding:22px">
         <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#00D632;margin-bottom:4px">T+30 Targets</div>
         <div style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:18px">Success criteria</div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Resolution Rate</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 95%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">FCR 7-day</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 75%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Repeat Contacts</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 25%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Transfers Out / wk</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 40</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">QA Score</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 97</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">Policy Pass</span><span style="font-size:11px;color:#00D632;font-weight:500">100%</span></div>
-        <div class="m-row"><span style="font-size:12px;color:rgba(255,255,255,.65)">FE Attrition</span><span style="font-size:11px;color:#00D632;font-weight:500">0</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Resolution Rate</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 95%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">FCR 7-day</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 75%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Repeat Contacts</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 25%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Transfers Out / wk</span><span style="font-size:11px;color:#00D632;font-weight:500">≤ 40</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">QA Score</span><span style="font-size:11px;color:#00D632;font-weight:500">≥ 97</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">Policy Pass</span><span style="font-size:11px;color:#00D632;font-weight:500">100%</span></div>
+        <div class="m-row"><span style="font-size:13px;color:rgba(255,255,255,.68)">FE Attrition</span><span style="font-size:11px;color:#00D632;font-weight:500">0</span></div>
       </div>
     </div>
     <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(255,255,255,.3);line-height:1.8">
@@ -850,23 +850,23 @@
     <div class="flex-col" style="margin-bottom:40px">
       <div class="card" style="border-left:3px solid #00D632;padding:14px 20px">
         <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">1</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Schedule discovery call</span></div><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">By EOW</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.6;padding-left:36px">Invite Brokerage Ops, Special Ops, VMO, MET, and Compliance stakeholders. Use the "Discovery Questions" tab as the agenda — 9 questions with named owners. Goal: walk out with Tier 2 scope direction and CNX closure confirmation.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;padding-left:36px">Invite Brokerage Ops, Special Ops, VMO, MET, and Compliance stakeholders. Use the "Discovery Questions" tab as the agenda — 9 questions with named owners. Goal: walk out with Tier 2 scope direction and CNX closure confirmation.</div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:14px 20px">
         <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">2</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Confirm CNX El Salvador closure status</span></div><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">VMO</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.6;padding-left:36px">Employee scaffold shows zero CNX headcount as of 3/9/2026. Ask VMO: is CNX fully closed? When did the last advocate roll off? If yes, the Tier 1 migration is already live without a formal readiness checkpoint — we need to validate FE is absorbing cleanly.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;padding-left:36px">Employee scaffold shows zero CNX headcount as of 3/9/2026. Ask VMO: is CNX fully closed? When did the last advocate roll off? If yes, the Tier 1 migration is already live without a formal readiness checkpoint — we need to validate FE is absorbing cleanly.</div>
       </div>
       <div class="card" style="border-left:3px solid #FF4466;padding:14px 20px">
         <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">3</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Request Tier 2 scope document</span></div><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Within 2 weeks of discovery · Brokerage Ops</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.6;padding-left:36px">This is the single item that unlocks everything else. Ask Brokerage Ops to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Without this, we cannot size training, define escalation paths, assess compliance risk, or finalize the readiness recommendation.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;padding-left:36px">This is the single item that unlocks everything else. Ask Brokerage Ops to document which Tier 2 brokerage scenarios shift to FE, which stay internal, and which require escalation. Without this, we cannot size training, define escalation paths, assess compliance risk, or finalize the readiness recommendation.</div>
       </div>
       <div class="card" style="border-left:3px solid #00B8FF;padding:14px 20px">
         <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">4</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">Confirm QA cadence continues through transition</span></div><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">QM</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.6;padding-left:36px">QA is working — 12 FE advocates evaluated, 1,053 evals, 98–100 avg. Ask QM to confirm this cadence will continue through the transition and extend to cover any new Tier 2 work. No new infrastructure needed — just confirmation the existing program stays active.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;padding-left:36px">QA is working — 12 FE advocates evaluated, 1,053 evals, 98–100 avg. Ask QM to confirm this cadence will continue through the transition and extend to cover any new Tier 2 work. No new infrastructure needed — just confirmation the existing program stays active.</div>
       </div>
       <div class="card" style="border-left:3px solid #A855F7;padding:14px 20px">
         <div class="row-sb" style="margin-bottom:6px"><div style="display:flex;gap:14px;align-items:center"><span class="num">5</span><span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:500">After discovery: finalize readiness recommendation</span></div><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);flex-shrink:0">Within 1 week of discovery · OR</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.6;padding-left:36px">Once discovery answers are in, update this dashboard with confirmed data, finalize the Readiness Recommendation doc (Google Doc), and present to Melissa and stakeholders for review and approval. The recommendation will include the final go/no-go position, requirements with owners and deadlines, and the T+7/T+30 measurement plan.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;padding-left:36px">Once discovery answers are in, update this dashboard with confirmed data, finalize the Readiness Recommendation doc (Google Doc), and present to Melissa and stakeholders for review and approval. The recommendation will include the final go/no-go position, requirements with owners and deadlines, and the T+7/T+30 measurement plan.</div>
       </div>
     </div>
 
@@ -922,12 +922,12 @@
     <div class="flex-col" style="gap:12px;margin-bottom:40px">
       <div class="card" style="border-left:3px solid #00D632;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Tier 2 Training</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px">1–2 modules with practice scenarios + assessment. Deliver to 17 FE advocates.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px">1–2 modules with practice scenarios + assessment. Deliver to 17 FE advocates.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.4)">L&D · [DRI TBD]</div>
       </div>
       <div class="card" style="border-left:3px solid #00D632;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Knowledge Articles</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px">Audit for Tier 2 coverage. Update existing, write missing. Est. 5–15 articles.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px">Audit for Tier 2 coverage. Update existing, write missing. Est. 5–15 articles.</div>
         <div style="font-size:11px;color:rgba(255,255,255,.4)">Content · [DRI TBD]</div>
       </div>
     </div>
@@ -937,28 +937,28 @@
     <div class="flex-col" style="gap:12px;margin-bottom:40px">
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Tier 2 scope undefined</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> Blocks all downstream work — L&D, Content, WFO, Compliance all waiting.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Discovery call by EOW. Brokerage Ops delivers scope doc within 2 weeks.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> Blocks all downstream work — L&D, Content, WFO, Compliance all waiting.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Discovery call by EOW. Brokerage Ops delivers scope doc within 2 weeks.</div>
       </div>
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Tool permission gaps on regulated work</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> Compliance risk if FE lacks access. Advocates create workarounds on FINRA work.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Support Product audits now. Fix gaps before Tier 2 launch.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> Compliance risk if FE lacks access. Advocates create workarounds on FINRA work.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Support Product audits now. Fix gaps before Tier 2 launch.</div>
       </div>
       <div class="card" style="border-left:3px solid #FF4466;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Unclear escalation model</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> FE doesn't know what to escalate vs. handle. High-risk cases may be mishandled.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Define as part of Tier 2 scope doc. Document escalation rules.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> FE doesn't know what to escalate vs. handle. High-risk cases may be mishandled.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Define as part of Tier 2 scope doc. Document escalation rules.</div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Single TL coaching 17 advocates on compliance-sensitive work</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> TL has 120 days tenure. If Tier 2 expands, coaching quality affects compliance outcomes.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Assess TL capability. Consider internal SME support during transition.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> TL has 120 days tenure. If Tier 2 expands, coaching quality affects compliance outcomes.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Assess TL capability. Consider internal SME support during transition.</div>
       </div>
       <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Knowledge articles may not cover CNX workflows</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> CNX may have relied on tribal knowledge. FE inherits work without guidance.</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Content audits articles for Tier 2. Identify gaps, update or write missing.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:4px"><strong style="color:rgba(255,255,255,.75)">Impact:</strong> CNX may have relied on tribal knowledge. FE inherits work without guidance.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7"><strong style="color:rgba(255,255,255,.75)">Mitigation:</strong> Content audits articles for Tier 2. Identify gaps, update or write missing.</div>
       </div>
     </div>
 
@@ -1016,15 +1016,15 @@
     <div class="flex-col" style="gap:12px;margin-bottom:40px">
       <div class="card" style="border-left:3px solid #00D632;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">T+7: No performance degradation</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7">Resolution rate ≥ 93%, FCR ≥ 70%, QA ≥ 95, transfers ≤ 70/week. If metrics cross thresholds, intervene.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7">Resolution rate ≥ 93%, FCR ≥ 70%, QA ≥ 95, transfers ≤ 70/week. If metrics cross thresholds, intervene.</div>
       </div>
       <div class="card" style="border-left:3px solid #00D632;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">T+30: Performance at or above baseline</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7">Resolution rate ≥ 95%, FCR ≥ 75%, QA ≥ 97, repeat contacts ≤ 25%, transfers ≤ 40/week, zero attrition.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7">Resolution rate ≥ 95%, FCR ≥ 75%, QA ≥ 97, repeat contacts ≤ 25%, transfers ≤ 40/week, zero attrition.</div>
       </div>
       <div class="card" style="border-left:3px solid #00D632;padding:16px 20px">
         <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:6px">Zero policy violations on Tier 2 work</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7">QA scores maintain 100% policy pass rate on FINRA-regulated interactions. Any violations trigger immediate review.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7">QA scores maintain 100% policy pass rate on FINRA-regulated interactions. Any violations trigger immediate review.</div>
       </div>
     </div>
   </div>
@@ -1216,7 +1216,7 @@
     
     <!-- LAUNCH SUMMARY -->
     <div class="section-label">Launch Summary</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.9;margin-bottom:40px;font-style:italic">
+    <div style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.9;margin-bottom:40px;font-style:italic">
       Auto-generated after launch.
     </div>
 
@@ -1293,13 +1293,13 @@
 
     <!-- OPERATIONAL LEARNINGS -->
     <div class="section-label">Operational Learnings</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.9;margin-bottom:40px;font-style:italic">
+    <div style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.9;margin-bottom:40px;font-style:italic">
       Auto-generated after launch.
     </div>
 
     <!-- IMPROVEMENTS FOR FUTURE LAUNCHES -->
     <div class="section-label">Improvements for Future Launches</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.9;margin-bottom:40px;font-style:italic">
+    <div style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.9;margin-bottom:40px;font-style:italic">
       Auto-generated after launch.
     </div>
   </div>
