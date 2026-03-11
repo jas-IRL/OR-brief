@@ -1576,79 +1576,113 @@
 
   // ── EXPORT TO GOOGLE DOC ──
   function exportToDoc() {
-    let text = '';
     const title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title;
-    text += title + '\n' + '='.repeat(title.length) + '\n\n';
+    const date = new Date().toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
 
-    // Walk through all panes in order
+    let html = '<html><head><style>body{font-family:Arial,sans-serif;font-size:11pt;color:#333;max-width:720px;margin:0 auto;padding:40px 20px}h1{font-size:22pt;margin-bottom:4px}h2{font-size:16pt;color:#1a73e8;border-bottom:1px solid #ddd;padding-bottom:6px;margin-top:32px}h3{font-size:13pt;color:#555;margin-top:20px}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#f1f3f4;text-align:left;padding:8px 12px;font-size:10pt;font-weight:600;border-bottom:2px solid #ddd}td{padding:8px 12px;border-bottom:1px solid #eee;font-size:10pt;vertical-align:top}ul{margin:8px 0 16px 20px}li{margin-bottom:6px;line-height:1.6}p{line-height:1.7;margin-bottom:12px}.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9pt;font-weight:600}.green{background:#e6f4ea;color:#137333}.yellow{background:#fef7e0;color:#b06000}.red{background:#fce8e6;color:#c5221f}.gray{background:#f1f3f4;color:#666}.meta{color:#666;font-size:10pt}</style></head><body>';
+    html += '<h1>' + title + '</h1>';
+    html += '<p class="meta">ORBIT Dashboard Export &mdash; ' + date + '</p><hr>';
+
     const allTabs = [...MODE_TABS.discovery, ...MODE_TABS.recommendation, ...MODE_TABS.review];
     allTabs.forEach(tab => {
       const pane = document.getElementById('pane-' + tab.id);
       if (!pane) return;
-
-      text += '\n' + tab.label.toUpperCase() + '\n' + '-'.repeat(tab.label.length) + '\n\n';
-
-      // Extract text content, preserving structure
       const clone = pane.cloneNode(true);
-      // Remove notes textarea from export
       const notes = clone.querySelector('.notes-container');
       if (notes) notes.remove();
 
-      // Process headings
-      clone.querySelectorAll('h2').forEach(h => { text += h.textContent.trim() + '\n\n'; });
+      html += '<h2>' + tab.label + '</h2>';
 
-      // Process cards
+      // Tables — preserve as formatted tables
+      clone.querySelectorAll('.orbit-table').forEach(tbl => {
+        html += '<table>';
+        tbl.querySelectorAll('tr').forEach(row => {
+          html += '<tr>';
+          row.querySelectorAll('th, td').forEach(cell => {
+            const tag = cell.tagName.toLowerCase();
+            let content = cell.innerHTML;
+            // Convert badges
+            content = content.replace(/badge-green/g, 'badge green').replace(/badge-yellow/g, 'badge yellow').replace(/badge-red/g, 'badge red').replace(/badge-gray/g, 'badge gray');
+            content = content.replace(/risk-high/g, 'badge red').replace(/risk-medium/g, 'badge yellow').replace(/risk-low/g, 'badge green');
+            html += '<' + tag + '>' + content + '</' + tag + '>';
+          });
+          html += '</tr>';
+        });
+        html += '</table>';
+        tbl.remove();
+      });
+
+      // Cards — convert to structured blocks
       clone.querySelectorAll('.card').forEach(card => {
-        const lines = card.textContent.trim().split('\n').map(l => l.trim()).filter(l => l);
-        lines.forEach(l => { text += '  ' + l + '\n'; });
-        text += '\n';
+        const titleEl = card.querySelector('[style*="font-weight:500"], [style*="font-weight: 500"], .card-title');
+        const bodyEls = card.querySelectorAll('div');
+        if (titleEl) {
+          html += '<h3>' + titleEl.textContent.trim() + '</h3>';
+        }
+        bodyEls.forEach(div => {
+          const text = div.textContent.trim();
+          if (text && div !== titleEl && text.length > 10) {
+            html += '<p>' + text + '</p>';
+          }
+        });
+        card.remove();
       });
 
-      // Process table rows
-      clone.querySelectorAll('.orbit-table tr').forEach(row => {
-        const cells = Array.from(row.querySelectorAll('th, td')).map(c => c.textContent.trim());
-        text += cells.join(' | ') + '\n';
-      });
-
-      // Process rows (non-table)
-      clone.querySelectorAll('.row').forEach(row => {
-        text += '• ' + row.textContent.trim().replace(/\s+/g, ' ') + '\n';
-      });
-
-      // Process prose paragraphs
-      clone.querySelectorAll('.prose p, [class*="prose"] p').forEach(p => {
-        text += p.textContent.trim() + '\n\n';
-      });
-
-      // Fallback: any remaining direct text
-      const remaining = clone.textContent.trim();
-      if (remaining && text.split(tab.label.toUpperCase())[1]?.trim().length < 20) {
-        text += remaining.substring(0, 2000) + '\n';
+      // Rows — convert to bullet list
+      const rows = clone.querySelectorAll('.row');
+      if (rows.length > 0) {
+        html += '<ul>';
+        rows.forEach(row => {
+          html += '<li>' + row.textContent.trim().replace(/\s+/g, ' ') + '</li>';
+        });
+        html += '</ul>';
+        rows.forEach(r => r.remove());
       }
 
-      text += '\n';
+      // M-rows (metrics) — convert to table
+      const mrows = clone.querySelectorAll('.m-row');
+      if (mrows.length > 0) {
+        html += '<table>';
+        mrows.forEach(mr => {
+          const spans = mr.querySelectorAll('span');
+          if (spans.length >= 2) {
+            html += '<tr><td>' + spans[0].textContent.trim() + '</td><td><strong>' + spans[1].textContent.trim() + '</strong></td></tr>';
+          }
+        });
+        html += '</table>';
+        mrows.forEach(r => r.remove());
+      }
+
+      // Remaining text — paragraphs
+      const remaining = clone.textContent.trim().replace(/\s+/g, ' ');
+      if (remaining.length > 30) {
+        // Split into paragraphs on double spaces or long runs
+        const chunks = remaining.split(/\s{3,}/).filter(c => c.length > 20);
+        chunks.forEach(c => { html += '<p>' + c + '</p>'; });
+      }
     });
 
-    // Add notes if they exist
+    // Add notes
     const notesText = localStorage.getItem(NOTES_KEY);
     if (notesText) {
-      text += '\nNOTES\n-----\n\n' + notesText + '\n';
+      html += '<h2>Notes</h2>';
+      notesText.split('\n').forEach(line => {
+        html += line.trim() ? '<p>' + line + '</p>' : '';
+      });
     }
 
-    // Open Google Docs with the content pre-filled
-    const encoded = encodeURIComponent(text);
-    // Google Docs doesn't support pre-filled content via URL, so copy to clipboard and open blank doc
-    navigator.clipboard.writeText(text).then(() => {
-      alert('Dashboard content copied to clipboard.\\n\\nA new Google Doc will open — just paste (Cmd+V) to populate it.');
-      window.open('https://docs.google.com/document/create', '_blank');
-    }).catch(() => {
-      // Fallback: download as text file
-      const blob = new Blob([text], {type: 'text/plain'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = (document.title || 'orbit-export') + '.txt';
-      a.click();
-    });
+    html += '</body></html>';
+
+    // Download as .html file that Google Docs can import with formatting
+    const blob = new Blob([html], {type: 'text/html'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (document.title || 'orbit-export').replace(/[^a-zA-Z0-9]/g, '-') + '.html';
+    a.click();
+
+    setTimeout(() => {
+      alert('HTML file downloaded.\\n\\nTo import into Google Docs:\\n1. Open Google Drive\\n2. Right-click the downloaded file → Open with → Google Docs\\n\\nAll formatting (headings, tables, bullets) will be preserved.');
+    }, 500);
   }
 
   // ── INIT ──
