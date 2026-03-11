@@ -440,7 +440,7 @@
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">DRIs</div>
-        <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7">Jas Bond (OR)<br/>Jesse McVeity (Product)<br/>Charlie Brumley (Content)<br/>Garrett Egan (L&D)</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.8">Jas Bond (OR)<br/>Elizabeth Lee (OI)<br/>Rekha P. Shivaprakash (Msg/FS)<br/>Joshua Bellar (Voice/Disputes)<br/>Matt Pentima (Msg/Disputes)<br/>Jesse McVeity (Product)</div>
       </div>
     </div>
     <div class="constellation-diagram"></div>
@@ -947,9 +947,9 @@
   function updateNotesVisibility() {
     const notes = document.getElementById('orbit-notes');
     if (!notes) return;
-    if (currentMode === 'discovery') {
+    // Only show notes on the Summary (triage) tab in Discovery mode
+    if (currentMode === 'discovery' && currentTab === 'triage') {
       notes.style.display = 'block';
-      // Move notes inside the active pane
       const activePane = document.querySelector('.pane.active');
       if (activePane) activePane.appendChild(notes);
     } else {

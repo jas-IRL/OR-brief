@@ -1552,9 +1552,9 @@
   function updateNotesVisibility() {
     const notes = document.getElementById('orbit-notes');
     if (!notes) return;
-    if (currentMode === 'discovery') {
+    // Only show notes on the Summary (triage) tab in Discovery mode
+    if (currentMode === 'discovery' && currentTab === 'triage') {
       notes.style.display = 'block';
-      // Move notes inside the active pane
       const activePane = document.querySelector('.pane.active');
       if (activePane) activePane.appendChild(notes);
     } else {
