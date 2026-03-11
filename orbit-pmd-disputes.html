@@ -440,7 +440,7 @@
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">DRIs</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.8">Jas Bond (OR)<br/>Elizabeth Lee (OI)<br/>Rekha P. Shivaprakash (Msg/FS)<br/>Joshua Bellar (Voice/Disputes)<br/>Matt Pentima (Msg/Disputes)<br/>Jesse McVeity (Product)</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7">Jas Bond (OR)<br/>Elizabeth Lee (OI)<br/>Rekha P. Shivaprakash (Msg/FS)<br/>Joshua Bellar (Voice/Disputes)<br/>Matt Pentima (Msg/Disputes)<br/>Jesse McVeity (Product)</div>
       </div>
     </div>
     <div class="constellation-diagram"></div>
@@ -522,19 +522,83 @@
         Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. Use the notes section below to capture questions for future reference.
       </div>
     </div>
-  <!-- NOTES (appears at bottom of every Discovery tab) -->
-  <div id="orbit-notes" style="display:none">
-    <div class="notes-container">
-      <div class="section-label">Notes</div>
-      <div class="notes-toolbar">
-        <div style="display:flex;gap:8px">
-          <button class="notes-btn" onclick="saveNote()">Save</button>
-          <button class="notes-btn" onclick="toggleHistory()">History</button>
-        </div>
-        <div class="notes-status" id="notes-status">No unsaved changes</div>
+  </div>
+
+  <!-- READINESS SNAPSHOT -->
+  <div class="pane" id="pane-readiness">
+    <h2><span class="accent">Readiness Snapshot</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
       </div>
-      <textarea class="notes-textarea" id="notes-input" placeholder="Type notes here during calls or reviews. Notes save to your browser and persist across sessions."></textarea>
-      <div class="notes-history" id="notes-history"></div>
+    </div>
+  </div>
+
+  <!-- KEY RISKS -->
+  <div class="pane" id="pane-risks">
+    <h2><span class="accent">Key Risks</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
+      </div>
+    </div>
+  </div>
+
+  <!-- REQUIREMENTS -->
+  <div class="pane" id="pane-requirements">
+    <h2><span class="accent">Requirements</span></h2>
+    <p class="sub-note"></p>
+    <div class="flex-col" style="gap:16px">
+      <div class="card" style="border-left:3px solid #FFD700;padding:16px 20px"><div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Final KA + QT updates for PMD disputes</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">Content · Charlie Brumley</span><span class="badge badge-yellow">In Progress</span></div></div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">Updated knowledge articles reflecting new dispute intake workflow. Updated scripts for PMD dispute scenarios including blocked dispute outcomes. Legacy PMD QTs (NMI, NMI Incomplete, Unable to Locate – No Barcode) deprecated.</div></div>
+      <div class="card" style="border-left:3px solid #00D632;padding:16px 20px"><div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Final PMD dispute job aid + Block Academy acknowledgment path</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&D · Garrett Egan</span><span class="badge badge-green">Completed</span></div></div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">Job aid for frontline advocates on the new Toolbox disputes intake flow. Acknowledgment path in Block Academy for tracking completion.</div></div>
+      <div class="card" style="border-left:3px solid #00D632;padding:16px 20px"><div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Block Academy training shell + course link</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">L&D · Garrett Egan</span><span class="badge badge-green">Completed</span></div></div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">eLearning module ready for March 27 delivery to all impacted advocates across Voice, Messaging, and Email.</div></div>
+      <div class="card" style="border-left:3px solid #00D632;padding:16px 20px"><div class="row-sb" style="margin-bottom:8px"><span style="font-size:12px;color:rgba(255,255,255,.85);font-weight:500">Training scheduling confirmation for impacted advocates</span><div style="display:flex;gap:10px;align-items:center"><span class="owner-tag">WFO · Janey An</span><span class="badge badge-green">Completed</span></div></div><div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.65">All impacted advocates across impacted LOBs scheduled for March 27 training. Coverage validated. 4-day buffer before hard deadline.</div></div>
+    </div>
+  </div>
+
+  <!-- INFLUENCING VARIABLES -->
+  <div class="pane" id="pane-confounders">
+    <h2><span class="accent">Influencing Variables</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
+      </div>
+    </div>
+  </div>
+
+  <!-- EFFORT SIZING -->
+  <div class="pane" id="pane-effort">
+    <h2><span class="accent">Effort Sizing</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
+      </div>
+    </div>
+  </div>
+
+  <!-- MEASUREMENT PLAN -->
+  <div class="pane" id="pane-measurement">
+    <h2><span class="accent">Measurement Plan</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
+      </div>
+    </div>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="pane" id="pane-action">
+    <h2><span class="accent">Next Steps</span></h2>
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:24px 28px;margin-top:16px">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.8">
+        Readiness discovery was not completed for this initiative. OR was looped in late in the process during a team reorganization. The readiness assessment was built retroactively from the approved launch plan.<br/><br/>
+        For the full readiness analysis, see the <strong style="color:rgba(255,255,255,.8)">Readiness Plan</strong> tab.
+      </div>
     </div>
   </div>
 
@@ -828,9 +892,9 @@
   function updateNotesVisibility() {
     const notes = document.getElementById('orbit-notes');
     if (!notes) return;
-    // Only show notes on the Summary (triage) tab in Discovery mode
     if (currentMode === 'discovery' && currentTab === 'unknown') {
       notes.style.display = 'block';
+      // Move notes inside the active pane
       const activePane = document.querySelector('.pane.active');
       if (activePane) activePane.appendChild(notes);
     } else {
