@@ -67,6 +67,23 @@
   .prose p{margin-bottom:16px}
   .prose strong{color:rgba(255,255,255,.9)}
 
+  /* Notes section */
+  .notes-container{margin-top:32px;border-top:1px solid rgba(255,255,255,.06);padding-top:24px}
+  .notes-textarea{width:100%;min-height:200px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px;color:#c8cbd2;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.7;resize:vertical;outline:none;transition:border-color .2s}
+  .notes-textarea:focus{border-color:rgba(0,214,50,.3)}
+  .notes-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .notes-status{font-size:11px;color:rgba(255,255,255,.35)}
+  .notes-history{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .notes-history.open{max-height:400px;overflow-y:auto}
+  .notes-history-item{padding:8px 12px;background:rgba(255,255,255,.02);border-radius:6px;margin-bottom:4px;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer;display:flex;justify-content:space-between}
+  .notes-history-item:hover{background:rgba(255,255,255,.04)}
+  .notes-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:5px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+  .notes-btn:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+
+  /* Export button */
+  .export-btn{position:fixed;bottom:20px;right:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;z-index:200;display:flex;align-items:center;gap:8px}
+  .export-btn:hover{background:rgba(0,214,50,.08);border-color:rgba(0,214,50,.3);color:#00D632}
+
   /* Tables — for structured data (readiness, risks, requirements) */
   .orbit-table{width:100%;border-collapse:separate;border-spacing:0 4px}
   .orbit-table th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500;text-align:left;padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -485,6 +502,22 @@
 {{PANE_ACTION}}
   </div>
 
+  <!-- NOTES (appears at bottom of every Discovery tab) -->
+  <div id="orbit-notes" style="display:none">
+    <div class="notes-container">
+      <div class="section-label">Notes</div>
+      <div class="notes-toolbar">
+        <div style="display:flex;gap:8px">
+          <button class="notes-btn" onclick="saveNote()">Save</button>
+          <button class="notes-btn" onclick="toggleHistory()">History</button>
+        </div>
+        <div class="notes-status" id="notes-status">No unsaved changes</div>
+      </div>
+      <textarea class="notes-textarea" id="notes-input" placeholder="Type notes here during calls or reviews. Notes save to your browser and persist across sessions."></textarea>
+      <div class="notes-history" id="notes-history"></div>
+    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════════ -->
   <!-- READINESS PLAN MODE: 3 TABS                    -->
   <!-- ═══════════════════════════════════════════════ -->
@@ -516,6 +549,9 @@
   </div><!-- close #content -->
 
 </div><!-- close #main-container -->
+
+<!-- EXPORT BUTTON -->
+<button class="export-btn" onclick="exportToDoc()">📄 Export to Doc</button>
 
 <!-- FOOTER -->
 <div id="footer">
@@ -635,9 +671,193 @@
     btn.onclick = () => switchMode(btn.dataset.mode);
   });
 
+  // ── AUTO-UPDATE DATE ──
+  function updateDate() {
+    const now = new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+    document.querySelectorAll('.meta-value').forEach(el => {
+      if (el.previousElementSibling && el.previousElementSibling.textContent.includes('Updated')) {
+        el.textContent = now;
+      }
+    });
+    // Also update sidebar "Last Updated"
+    document.querySelectorAll('.sidebar-label').forEach(label => {
+      if (label.textContent.includes('Last Updated')) {
+        const val = label.nextElementSibling;
+        if (val) val.textContent = now;
+      }
+    });
+  }
+
+  // ── NOTES SYSTEM ──
+  const NOTES_KEY = 'orbit-notes-' + (document.title || 'default');
+  const HISTORY_KEY = NOTES_KEY + '-history';
+
+  function loadNotes() {
+    const saved = localStorage.getItem(NOTES_KEY);
+    const input = document.getElementById('notes-input');
+    if (saved && input) input.value = saved;
+  }
+
+  function saveNote() {
+    const input = document.getElementById('notes-input');
+    if (!input) return;
+    const text = input.value;
+    const now = new Date().toLocaleString('en-US', {month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit'});
+
+    // Save current
+    localStorage.setItem(NOTES_KEY, text);
+
+    // Save to history (keep last 20)
+    let history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+    history.unshift({ date: now, text: text.substring(0, 200), full: text });
+    if (history.length > 20) history = history.slice(0, 20);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+
+    document.getElementById('notes-status').textContent = 'Saved ' + now;
+    renderHistory();
+  }
+
+  function toggleHistory() {
+    const el = document.getElementById('notes-history');
+    el.classList.toggle('open');
+    renderHistory();
+  }
+
+  function renderHistory() {
+    const el = document.getElementById('notes-history');
+    const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+    el.innerHTML = history.map((h, i) =>
+      '<div class="notes-history-item" onclick="restoreNote('+i+')"><span>'+h.date+'</span><span style="color:rgba(255,255,255,.3)">'+h.text.substring(0,60)+(h.text.length>60?'...':'')+'</span></div>'
+    ).join('');
+  }
+
+  function restoreNote(index) {
+    const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+    if (history[index]) {
+      document.getElementById('notes-input').value = history[index].full;
+      document.getElementById('notes-status').textContent = 'Restored from ' + history[index].date;
+    }
+  }
+
+  // Auto-save on typing (debounced)
+  let noteTimer;
+  document.addEventListener('input', (e) => {
+    if (e.target.id === 'notes-input') {
+      document.getElementById('notes-status').textContent = 'Unsaved changes...';
+      clearTimeout(noteTimer);
+      noteTimer = setTimeout(() => saveNote(), 3000);
+    }
+  });
+
+  // Show/hide notes based on mode
+  function updateNotesVisibility() {
+    const notes = document.getElementById('orbit-notes');
+    if (!notes) return;
+    if (currentMode === 'discovery') {
+      notes.style.display = 'block';
+      // Move notes inside the active pane
+      const activePane = document.querySelector('.pane.active');
+      if (activePane) activePane.appendChild(notes);
+    } else {
+      notes.style.display = 'none';
+    }
+  }
+
+  // Override switchTab to also handle notes
+  const _origSwitchTab = switchTab;
+  switchTab = function(id) {
+    _origSwitchTab(id);
+    setTimeout(updateNotesVisibility, 10);
+  };
+  const _origSwitchMode = switchMode;
+  switchMode = function(mode) {
+    _origSwitchMode(mode);
+    setTimeout(updateNotesVisibility, 10);
+  };
+
+  // ── EXPORT TO GOOGLE DOC ──
+  function exportToDoc() {
+    let text = '';
+    const title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title;
+    text += title + '\n' + '='.repeat(title.length) + '\n\n';
+
+    // Walk through all panes in order
+    const allTabs = [...MODE_TABS.discovery, ...MODE_TABS.recommendation, ...MODE_TABS.review];
+    allTabs.forEach(tab => {
+      const pane = document.getElementById('pane-' + tab.id);
+      if (!pane) return;
+
+      text += '\n' + tab.label.toUpperCase() + '\n' + '-'.repeat(tab.label.length) + '\n\n';
+
+      // Extract text content, preserving structure
+      const clone = pane.cloneNode(true);
+      // Remove notes textarea from export
+      const notes = clone.querySelector('.notes-container');
+      if (notes) notes.remove();
+
+      // Process headings
+      clone.querySelectorAll('h2').forEach(h => { text += h.textContent.trim() + '\n\n'; });
+
+      // Process cards
+      clone.querySelectorAll('.card').forEach(card => {
+        const lines = card.textContent.trim().split('\n').map(l => l.trim()).filter(l => l);
+        lines.forEach(l => { text += '  ' + l + '\n'; });
+        text += '\n';
+      });
+
+      // Process table rows
+      clone.querySelectorAll('.orbit-table tr').forEach(row => {
+        const cells = Array.from(row.querySelectorAll('th, td')).map(c => c.textContent.trim());
+        text += cells.join(' | ') + '\n';
+      });
+
+      // Process rows (non-table)
+      clone.querySelectorAll('.row').forEach(row => {
+        text += '• ' + row.textContent.trim().replace(/\s+/g, ' ') + '\n';
+      });
+
+      // Process prose paragraphs
+      clone.querySelectorAll('.prose p, [class*="prose"] p').forEach(p => {
+        text += p.textContent.trim() + '\n\n';
+      });
+
+      // Fallback: any remaining direct text
+      const remaining = clone.textContent.trim();
+      if (remaining && text.split(tab.label.toUpperCase())[1]?.trim().length < 20) {
+        text += remaining.substring(0, 2000) + '\n';
+      }
+
+      text += '\n';
+    });
+
+    // Add notes if they exist
+    const notesText = localStorage.getItem(NOTES_KEY);
+    if (notesText) {
+      text += '\nNOTES\n-----\n\n' + notesText + '\n';
+    }
+
+    // Open Google Docs with the content pre-filled
+    const encoded = encodeURIComponent(text);
+    // Google Docs doesn't support pre-filled content via URL, so copy to clipboard and open blank doc
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Dashboard content copied to clipboard.\\n\\nA new Google Doc will open — just paste (Cmd+V) to populate it.');
+      window.open('https://docs.google.com/document/create', '_blank');
+    }).catch(() => {
+      // Fallback: download as text file
+      const blob = new Blob([text], {type: 'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = (document.title || 'orbit-export') + '.txt';
+      a.click();
+    });
+  }
+
+  // ── INIT ──
   renderNav();
   switchTab("triage");
   loadApprovals();
+  loadNotes();
+  updateDate();
 </script>
 </body>
 </html>
